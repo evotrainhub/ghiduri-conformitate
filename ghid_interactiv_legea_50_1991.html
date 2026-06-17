@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="ro" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghid Interactiv Legea 50/1991 (Actualizată 2026)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- Header / Navigație Principală -->
+    <header class="bg-gradient-to-r from-brand-900 via-slate-900 to-slate-950 text-white border-b border-slate-800 sticky top-0 z-40 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center space-x-3">
+                    <div class="p-2 bg-brand-600 rounded-lg shadow-inner">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold leading-tight sm:text-xl tracking-tight">Legea 50/1991 Interactive</h1>
+                        <p class="text-xs text-slate-400">Ghid Legislativ de Autorizare & Construcție • Ediția Consolidată 2026</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-2 text-sm bg-slate-800/50 p-1.5 rounded-xl border border-slate-700/50">
+                    <span class="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 font-medium text-xs flex items-center">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
+                        Actualizat conform OUG 31/2025 și OG 7/2026
+                    </span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Structura Principală: Sidebar + Conținut -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex flex-col lg:flex-row gap-6 py-6">
+        
+        <!-- Meniu Lateral (Desktop) / Butoane de Navigație (Mobil) -->
+        <aside class="w-full lg:w-72 flex-shrink-0">
+            <div class="bg-white rounded-2xl border border-slate-200/80 p-4 shadow-sm sticky top-24 space-y-2">
+                <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 mb-3">Meniu Ghid</p>
+                
+                <button onclick="switchTab('diagnostic')" id="btn-diagnostic" class="tab-btn w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-200 bg-brand-50 text-brand-700 border border-brand-100 shadow-sm">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                    <span>Diagnostic Lucrare</span>
+                </button>
+
+                <button onclick="switchTab('etape')" id="btn-etape" class="tab-btn w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <span>Etape & Termene</span>
+                </button>
+
+                <button onclick="switchTab('emitenti')" id="btn-emitenti" class="tab-btn w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    <span>Cine Emite Autorizația?</span>
+                </button>
+
+                <button onclick="switchTab('scutiri')" id="btn-scutiri" class="tab-btn w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <span>Lucrări Scutite (Art. 11)</span>
+                </button>
+
+                <button onclick="switchTab('documentatie')" id="btn-documentatie" class="tab-btn w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                    <span>Documentația Tehnică D.T.</span>
+                </button>
+
+                <button onclick="switchTab('sanctiuni')" id="btn-sanctiuni" class="tab-btn w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    <span>Sancțiuni & Amenzi</span>
+                </button>
+
+                <div class="pt-4 border-t border-slate-100 mt-4 text-center">
+                    <p class="text-[10px] text-slate-400">Legea nr. 50/1991 consolidată la zi, incluzând completările din 2026.</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Zona de Conținut Dinamic -->
+        <main class="flex-grow bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 lg:p-8 min-h-[600px] transition-all duration-300">
+            
+            <!-- SECȚIUNEA 1: DIAGNOSTIC LUCRARE -->
+            <section id="tab-diagnostic" class="tab-content block">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Asistent de Evaluare Rapidă a Lucrării</h2>
+                    <p class="text-slate-500 mb-8">Răspunde la câteva întrebări simple pentru a afla dacă lucrarea ta necesită Autorizație de Construire (A.C.), dacă este scutită sau dacă nerespectarea legii constituie infracțiune penală.</p>
+                    
+                    <div id="quiz-container" class="bg-slate-50 rounded-2xl border border-slate-200 p-6 md:p-8 shadow-inner">
+                        
+                        <!-- Întrebarea 1 -->
+                        <div id="quiz-step-1" class="quiz-step block">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full">Pasul 1 din 3</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-4 mb-6">Care este natura exactă a lucrărilor pe care doriți să le realizați?</h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <label class="quiz-option cursor-pointer flex items-start space-x-3 p-4 bg-white rounded-xl border border-slate-200 hover:border-brand-300 hover:bg-brand-50/10 transition-all">
+                                    <input type="radio" name="nature" value="construire" class="mt-1 text-brand-600 focus:ring-brand-500" checked>
+                                    <div>
+                                        <p class="font-semibold text-slate-900 text-sm">Construire, Extindere, Reconstruire</p>
+                                        <p class="text-xs text-slate-500 mt-1">Lucrări noi, mansardări, etajări sau modificări ale anvelopei.</p>
+                                    </div>
+                                </label>
+                                <label class="quiz-option cursor-pointer flex items-start space-x-3 p-4 bg-white rounded-xl border border-slate-200 hover:border-brand-300 hover:bg-brand-50/10 transition-all">
+                                    <input type="radio" name="nature" value="demolare" class="mt-1 text-brand-600 focus:ring-brand-500">
+                                    <div>
+                                        <p class="font-semibold text-slate-900 text-sm">Desființare totală sau parțială</p>
+                                        <p class="text-xs text-slate-500 mt-1">Demolarea sau dezafectarea unei structuri existente.</p>
+                                    </div>
+                                </label>
+                                <label class="quiz-option cursor-pointer flex items-start space-x-3 p-4 bg-white rounded-xl border border-slate-200 hover:border-brand-300 hover:bg-brand-50/10 transition-all">
+                                    <input type="radio" name="nature" value="reparatie_finisaj" class="mt-1 text-brand-600 focus:ring-brand-500">
+                                    <div>
+                                        <p class="font-semibold text-slate-900 text-sm">Reparații, Finisaje, Înlocuiri</p>
+                                        <p class="text-xs text-slate-500 mt-1">Zugrăveli, tâmplărie exterioară, învelitori, acoperișuri.</p>
+                                    </div>
+                                </label>
+                                <label class="quiz-option cursor-pointer flex items-start space-x-3 p-4 bg-white rounded-xl border border-slate-200 hover:border-brand-300 hover:bg-brand-50/10 transition-all">
+                                    <input type="radio" name="nature" value="compartimentare" class="mt-1 text-brand-600 focus:ring-brand-500">
+                                    <div>
+                                        <p class="font-semibold text-slate-900 text-sm">Modificări Interioare</p>
+                                        <p class="text-xs text-slate-500 mt-1">Dărâmarea sau ridicarea de pereți despartitori noi.</p>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="flex justify-end mt-8">
+                                <button onclick="nextQuizStep(2)" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl text-sm transition shadow-md flex items-center space-x-2">
+                                    <span>Continuă</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Întrebarea 2 -->
+                        <div id="quiz-step-2" class="quiz-step hidden">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full">Pasul 2 din 3</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-4 mb-6">Imobilul se încadrează în vreuna din următoarele categorii de patrimoniu?</h3>
+                            
+                            <div class="space-y-3">
+                                <label class="quiz-option cursor-pointer flex items-start space-x-3 p-4 bg-white rounded-xl border border-slate-200 hover:border-brand-300 hover:bg-brand-50/10 transition-all">
+                                    <input type="radio" name="patrimony" value="monument" class="mt-1 text-brand-600 focus:ring-brand-500" checked>
+                                    <div>
+                                        <p class="font-semibold text-slate-900 text-sm">Este monument istoric clasat sau în curs de clasare</p>
+                                        <p class="text-xs text-slate-500 mt-1">Clădiri cu valoare istorică deosebită, identificate în imobil sau anexă.</p>
+                                    </div>
+                                </label>
+                                <label class="quiz-option cursor-pointer flex items-start space-x-3 p-4 bg-white rounded-xl border border-slate-200 hover:border-brand-300 hover:bg-brand-50/10 transition-all">
+                                    <input type="radio" name="patrimony" value="zona_protejata" class="mt-1 text-brand-600 focus:ring-brand-500">
+                                    <div>
+                                        <p class="font-semibold text-slate-900 text-sm">Se află în zona de protecție a unui monument sau în zonă construită protejată</p>
+                                        <p class="text-xs text-slate-500 mt-1">Teritoriu delimitat urbanistic pentru conservare.</p>
+                                    </div>
+                                </label>
+                                <label class="quiz-option cursor-pointer flex items-start space-x-3 p-4 bg-white rounded-xl border border-slate-200 hover:border-brand-300 hover:bg-brand-50/10 transition-all">
+                                    <input type="radio" name="patrimony" value="niciuna" class="mt-1 text-brand-600 focus:ring-brand-500">
+                                    <div>
+                                        <p class="font-semibold text-slate-900 text-sm">Nu este monument istoric și nu se află în zonă de protecție</p>
+                                        <p class="text-xs text-slate-500 mt-1">O zonă urbană sau rurală comună, fără restricții patrimoniale speciale.</p>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="flex justify-between mt-8">
+                                <button onclick="nextQuizStep(1)" class="px-5 py-3 text-slate-600 hover:text-slate-900 font-semibold rounded-xl text-sm transition flex items-center space-x-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                                    <span>Înapoi</span>
+                                </button>
+                                <button onclick="nextQuizStep(3)" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl text-sm transition shadow-md flex items-center space-x-2">
+                                    <span>Continuă</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Întrebarea 3 -->
+                        <div id="quiz-step-3" class="quiz-step hidden">
+                            <span class="text-xs font-semibold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full">Pasul 3 din 3</span>
+                            <h3 class="text-lg font-bold text-slate-900 mt-4 mb-6">Lucrarea afectează structura de rezistență sau aspectul arhitectural general al imobilului?</h3>
+                            
+                            <div class="space-y-3">
+                                <label class="quiz-option cursor-pointer flex items-start space-x-3 p-4 bg-white rounded-xl border border-slate-200 hover:border-brand-300 hover:bg-brand-50/10 transition-all">
+                                    <input type="radio" name="structure" value="afectat" class="mt-1 text-brand-600 focus:ring-brand-500" checked>
+                                    <div>
+                                        <p class="font-semibold text-slate-900 text-sm">Da, se modifică structura de rezistență sau fațadele/forma clădirii</p>
+                                        <p class="text-xs text-slate-500 mt-1">Intervenții pe grinzi, stâlpi, modificarea formei acoperișului, crearea de noi goluri de ferestre sau uși.</p>
+                                    </div>
+                                </label>
+                                <label class="quiz-option cursor-pointer flex items-start space-x-3 p-4 bg-white rounded-xl border border-slate-200 hover:border-brand-300 hover:bg-brand-50/10 transition-all">
+                                    <input type="radio" name="structure" value="neafectat" class="mt-1 text-brand-600 focus:ring-brand-500">
+                                    <div>
+                                        <p class="font-semibold text-slate-900 text-sm">Nu, structura de rezistență și aspectul exterior rămân neschimbate</p>
+                                        <p class="text-xs text-slate-500 mt-1">Se păstrează forma, dimensiunile golurilor, materialele sau este o simplă înlocuire de finisaj.</p>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div class="flex justify-between mt-8">
+                                <button onclick="nextQuizStep(2)" class="px-5 py-3 text-slate-600 hover:text-slate-900 font-semibold rounded-xl text-sm transition flex items-center space-x-2">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                                    <span>Înapoi</span>
+                                </button>
+                                <button onclick="evaluateQuiz()" class="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-sm transition shadow-md flex items-center space-x-2">
+                                    <span>Afișează Rezultatul</span>
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Rezultat Diagnostic -->
+                        <div id="quiz-result" class="hidden">
+                            <div class="flex items-start space-x-4 p-5 rounded-2xl mb-6 shadow-sm border" id="result-alert-box">
+                                <div class="p-2.5 rounded-xl bg-white shadow-inner flex-shrink-0" id="result-icon-container">
+                                    <!-- Icon dynamic insert -->
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-slate-900" id="result-title">Analiză finalizată</h4>
+                                    <p class="text-sm mt-1 text-slate-600" id="result-desc"></p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white rounded-xl border border-slate-200 p-5 space-y-4">
+                                <h5 class="text-xs font-bold uppercase text-slate-400 tracking-wider">Temei Legal & Pașii Următori</h5>
+                                <div class="text-sm text-slate-700 space-y-2.5" id="result-legal">
+                                    <!-- Legal details dynamic insert -->
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center mt-8 pt-4 border-t border-slate-200">
+                                <button onclick="resetQuiz()" class="text-sm text-slate-500 hover:text-slate-800 font-semibold flex items-center space-x-1">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 4.89M9 11l3-3m0 0l3 3m-3-3v12"></path></svg>
+                                    <span>Reîncepe diagnosticarea</span>
+                                </button>
+                                <span class="text-xs text-slate-400 font-medium">Baza legală: Legea 50/1991 (rep.)</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECȚIUNEA 2: ETAPE & TERMENE -->
+            <section id="tab-etape" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">Procedura de Autorizare: Etape & Termene Limită</h2>
+                <p class="text-slate-500 mb-6">Procedura de autorizare cuprinde 7 etape obligatorii conform **Art. 2 alin. (2<sup>1</sup>)**. Faceți clic pe fiecare etapă pentru detalii, termene și aplicabilitatea noilor reguli de **avizare tacită** introduse pentru accelerarea investițiilor.</p>
+
+                <!-- Stepper vizual -->
+                <div class="grid grid-cols-2 md:grid-cols-7 gap-2 mb-8 bg-slate-50 p-2 rounded-2xl border border-slate-200/80">
+                    <button onclick="setActiveStep(1)" id="step-btn-1" class="step-btn flex flex-col items-center justify-center p-3 rounded-xl bg-white border border-brand-100 shadow-sm text-brand-700">
+                        <span class="text-lg font-bold">1</span>
+                        <span class="text-[10px] uppercase font-bold tracking-wider mt-1 text-center truncate w-full">Certificat</span>
+                    </button>
+                    <button onclick="setActiveStep(2)" id="step-btn-2" class="step-btn flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-100 text-slate-500">
+                        <span class="text-lg font-bold">2</span>
+                        <span class="text-[10px] uppercase font-bold tracking-wider mt-1 text-center truncate w-full">Mediu PV</span>
+                    </button>
+                    <button onclick="setActiveStep(3)" id="step-btn-3" class="step-btn flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-100 text-slate-500">
+                        <span class="text-lg font-bold">3</span>
+                        <span class="text-[10px] uppercase font-bold tracking-wider mt-1 text-center truncate w-full">Notificare</span>
+                    </button>
+                    <button onclick="setActiveStep(4)" id="step-btn-4" class="step-btn flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-100 text-slate-500">
+                        <span class="text-lg font-bold">4</span>
+                        <span class="text-[10px] uppercase font-bold tracking-wider mt-1 text-center truncate w-full">Avize</span>
+                    </button>
+                    <button onclick="setActiveStep(5)" id="step-btn-5" class="step-btn flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-100 text-slate-500">
+                        <span class="text-lg font-bold">5</span>
+                        <span class="text-[10px] uppercase font-bold tracking-wider mt-1 text-center truncate w-full">Proiect DT</span>
+                    </button>
+                    <button onclick="setActiveStep(6)" id="step-btn-6" class="step-btn flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-100 text-slate-500">
+                        <span class="text-lg font-bold">6</span>
+                        <span class="text-[10px] uppercase font-bold tracking-wider mt-1 text-center truncate w-full">Depunere</span>
+                    </button>
+                    <button onclick="setActiveStep(7)" id="step-btn-7" class="step-btn flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-100 text-slate-500">
+                        <span class="text-lg font-bold">7</span>
+                        <span class="text-[10px] uppercase font-bold tracking-wider mt-1 text-center truncate w-full">Autorizație</span>
+                    </button>
+                </div>
+
+                <!-- Card Info Etapă Activă -->
+                <div id="step-info-card" class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm transition-all duration-300">
+                    <!-- Dynamic details will be rendered here based on active step -->
+                </div>
+
+                <!-- Notă despre Aprobarea Tacită conform OUG 31/2025 -->
+                <div class="mt-8 p-5 bg-amber-50/50 rounded-2xl border border-amber-200/60 flex items-start space-x-3.5">
+                    <svg class="w-6 h-6 text-amber-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <div>
+                        <h4 class="text-sm font-bold text-amber-900">Mecanismul de Aprobare Tacită (Introducere istorică OUG 31/2025)</h4>
+                        <p class="text-xs text-amber-800 mt-1">Conform **Art. 5 alin. (1<sup>10</sup>)**, dacă o autoritate sau entitate de utilități nu emite avizul sau nu solicită clarificări în maximum **15 zile** (sau 15 zile de la documentația corectată), documentația este considerată completă, iar avizele se consideră acordate (aprobare tacită). **Excepție:** Documentațiile depuse la instituțiile din Sistemul național de apărare, ordine publică și securitate națională nu beneficiază de avizare tacită.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECȚIUNEA 3: CINE EMITE AUTORIZAȚIA -->
+            <section id="tab-emitenti" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">Competețe de Emitere: Cine semnează actul final?</h2>
+                <p class="text-slate-500 mb-6">Autorizația de construire/desființare este un act administrativ emis de liderii administrațiilor locale. Selectați categoria de teritoriu sau de proiect de mai jos pentru a determina emitentul competent conform **Art. 4** al legii.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+                    <button onclick="setIssuerCategory('normal')" id="is-btn-normal" class="is-btn p-5 text-left border rounded-2xl bg-brand-50/50 border-brand-200 hover:border-brand-300 transition-all">
+                        <div class="w-10 h-10 bg-brand-600 text-white rounded-xl flex items-center justify-center font-bold text-lg mb-3 shadow-sm">UAT</div>
+                        <h3 class="font-bold text-slate-900 text-sm">Teritoriul Local</h3>
+                        <p class="text-xs text-slate-500 mt-1">Comune, orașe și municipii din județ.</p>
+                    </button>
+                    <button onclick="setIssuerCategory('bucuresti')" id="is-btn-bucuresti" class="is-btn p-5 text-left border rounded-2xl bg-white border-slate-200 hover:border-slate-300 transition-all">
+                        <div class="w-10 h-10 bg-slate-800 text-white rounded-xl flex items-center justify-center font-bold text-lg mb-3 shadow-sm">B</div>
+                        <h3 class="font-bold text-slate-900 text-sm">Municipiul București</h3>
+                        <p class="text-xs text-slate-500 mt-1">Sectoare, zone protejate și rețele municipale.</p>
+                    </button>
+                    <button onclick="setIssuerCategory('speciale')" id="is-btn-speciale" class="is-btn p-5 text-left border rounded-2xl bg-white border-slate-200 hover:border-slate-300 transition-all">
+                        <div class="w-10 h-10 bg-slate-800 text-white rounded-xl flex items-center justify-center font-bold text-lg mb-3 shadow-sm">SP</div>
+                        <h3 class="font-bold text-slate-900 text-sm">Proiecte Speciale & Naționale</h3>
+                        <p class="text-xs text-slate-500 mt-1">Infrastructură națională, rețele magistrale, siguranță națională.</p>
+                    </button>
+                </div>
+
+                <div id="issuer-info-box" class="bg-slate-50 rounded-2xl border border-slate-200 p-6 space-y-4">
+                    <!-- Dynamically populated information based on chosen category -->
+                </div>
+            </section>
+
+            <!-- SECȚIUNEA 4: LUCRĂRI SCUTITE (ART. 11) -->
+            <section id="tab-scutiri" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">Lucrări Scutite de Autorizare (Art. 11)</h2>
+                <p class="text-slate-500 mb-6">Puteți executa lucrări de reparații și întreținere **fără autorizație de construire**, dacă acestea nu modifică structura de rezistență și aspectul arhitectural general (**Art. 11 alin. 1**). Căutați sau filtrați lista de mai jos.</p>
+
+                <!-- Căutare și Filtrare -->
+                <div class="flex flex-col md:flex-row md:items-center md:space-x-4 gap-3 mb-6">
+                    <div class="flex-grow relative">
+                        <input type="text" id="exemption-search" oninput="filterExemptions()" placeholder="Caută o lucrare scutită... (ex: gard, acoperiș, centrală)" class="w-full px-4 py-3 pl-10 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:ring-2 focus:ring-brand-500 focus:bg-white transition-all">
+                        <svg class="w-5 h-5 text-slate-400 absolute left-3 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <div class="flex-shrink-0 flex gap-2 overflow-x-auto pb-1 md:pb-0">
+                        <button onclick="filterExemptionCategory('all')" id="ex-cat-all" class="ex-cat-btn px-4 py-2.5 rounded-lg text-xs font-semibold bg-brand-600 text-white shadow-sm transition">Toate</button>
+                        <button onclick="filterExemptionCategory('reparatii')" id="ex-cat-reparatii" class="ex-cat-btn px-4 py-2.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Reparații</button>
+                        <button onclick="filterExemptionCategory('finisaje')" id="ex-cat-finisaje" class="ex-cat-btn px-4 py-2.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Finisaje</button>
+                        <button onclick="filterExemptionCategory('instalatii')" id="ex-cat-instalatii" class="ex-cat-btn px-4 py-2.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition">Instalații/SGR</button>
+                    </div>
+                </div>
+
+                <!-- Lista de lucrări scutite -->
+                <div class="space-y-3 custom-scrollbar max-h-[450px] overflow-y-auto pr-2" id="exemptions-list">
+                    <!-- Populated dynamically via javascript -->
+                </div>
+
+                <!-- Avertisment special Monumente -->
+                <div class="mt-6 p-4 bg-red-50 rounded-2xl border border-red-200/60 flex items-start space-x-3.5">
+                    <svg class="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    <div>
+                        <p class="text-xs font-bold text-red-900">Atenție la Monumentele Istorice și Zonele Protejate! (Art. 11 alin. 2)</p>
+                        <p class="text-[11px] text-red-800 mt-1">Dacă imobilul se află în **zona de protecție a unui monument** sau în **zonă construită protejată** (și nu este monument în sine), lucrările scutite (de ex: reparații tencuieli, înlocuiri acoperiș) pot fi executate **DOAR cu notificarea prealabilă** a primăriei și a Direcției Județene de Cultură și doar în baza **acordului scris** al acesteia din urmă (Art. 11 alin. 4).</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECȚIUNEA 5: DOCUMENTAȚIA TEHNICĂ D.T. -->
+            <section id="tab-documentatie" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">Conținutul Documentației Tehnice (D.T.)</h2>
+                <p class="text-slate-500 mb-6">Documentația Tehnică (Anexa nr. 1) reprezintă conținutul minim ce se depune spre obținerea autorizației. Selectați tipul de autorizație dorit pentru a explora piesele scrise și desenate necesare.</p>
+
+                <!-- Sub-tab-uri Documentație -->
+                <div class="flex space-x-2 border-b border-slate-200 mb-6">
+                    <button onclick="setDocSubTab('dtac')" id="doc-subtab-dtac" class="doc-subtab-btn border-b-2 border-brand-600 text-brand-600 font-semibold px-4 py-2.5 text-sm">D.T.A.C. (Construire)</button>
+                    <button onclick="setDocSubTab('dtad')" id="doc-subtab-dtad" class="doc-subtab-btn border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium px-4 py-2.5 text-sm">D.T.A.D. (Demolare)</button>
+                    <button onclick="setDocSubTab('dtoe')" id="doc-subtab-dtoe" class="doc-subtab-btn border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium px-4 py-2.5 text-sm">D.T.O.E. (Organizare)</button>
+                </div>
+
+                <div id="doc-content-box" class="space-y-6">
+                    <!-- Dynamically populated based on subtab selection -->
+                </div>
+            </section>
+
+            <!-- SECȚIUNEA 6: SANCȚIUNI & AMENZI -->
+            <section id="tab-sanctiuni" class="tab-content hidden">
+                <h2 class="text-2xl font-bold text-slate-900 mb-2">Ghid de Sancțiuni, Contravenții și Infracțiuni</h2>
+                <p class="text-slate-500 mb-6">Executarea fără autorizație sau cu nerespectarea acesteia atrage consecințe aspre. Legea cuprinde atât contravenții (amenzi administrative, **Art. 26**), cât și fapte care constituie **infracțiuni** (dosar penal, **Art. 24**).</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Infracțiuni (Dosar Penal) -->
+                    <div class="border border-red-200 bg-red-50/20 rounded-2xl p-5 space-y-4">
+                        <div class="flex items-center space-x-2 text-red-700">
+                            <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m0-8v6m0 5h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <h3 class="font-bold text-lg">Infracțiuni Penal (Art. 24)</h3>
+                        </div>
+                        <p class="text-xs text-slate-500">Se pedepsesc cu **închisoare de la 3 luni la 1 an sau cu amendă penală**:</p>
+                        
+                        <div class="space-y-3">
+                            <div class="bg-white border border-red-100 p-3 rounded-xl shadow-xs">
+                                <p class="text-xs font-bold text-red-900">Lucrări pe Monumente sau în Zone Protejate</p>
+                                <p class="text-[11px] text-slate-600 mt-0.5">Executarea fără A.C./A.D. ori cu nerespectarea acesteia a lucrărilor la monumente istorice sau în zone construite protejate (Art. 24 lit. a).</p>
+                            </div>
+                            <div class="bg-white border border-red-100 p-3 rounded-xl shadow-xs">
+                                <p class="text-xs font-bold text-red-900">Continuarea Lucrărilor Oprite</p>
+                                <p class="text-[11px] text-slate-600 mt-0.5">Continuarea executării lucrărilor după ce organele de control autorizate au dispus oprirea acestora (Art. 24 lit. b).</p>
+                            </div>
+                            <div class="bg-white border border-red-100 p-3 rounded-xl shadow-xs">
+                                <p class="text-xs font-bold text-red-900">Proiectare Fără Calificare</p>
+                                <p class="text-[11px] text-slate-600 mt-0.5">Semnarea documentațiilor tehnice (D.T.) pentru alte specialități decât cele certificate prin diplomă universitară (Art. 24 lit. c).</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contravenții și Amenzi Administrative -->
+                    <div class="border border-slate-200 bg-slate-50/50 rounded-2xl p-5 space-y-4">
+                        <div class="flex items-center space-x-2 text-slate-800">
+                            <svg class="w-6 h-6 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <h3 class="font-bold text-lg">Contravenții Administrative (Art. 26)</h3>
+                        </div>
+                        <p class="text-xs text-slate-500">Amenzi contravenționale aplicate de Inspectoratul de Stat în Construcții (I.S.C.) sau disciplina în construcții locală:</p>
+
+                        <div class="space-y-3 custom-scrollbar max-h-[250px] overflow-y-auto pr-1">
+                            <div class="bg-white border border-slate-200 p-3 rounded-xl shadow-xs flex justify-between items-start">
+                                <div class="pr-2">
+                                    <p class="text-xs font-bold text-slate-950">Ridicarea de clădiri fără A.C. (lucrări de bază)</p>
+                                    <p class="text-[10px] text-slate-500">Art. 26 alin. (1) lit. a)</p>
+                                </div>
+                                <span class="px-2 py-1 bg-amber-100 text-amber-800 font-bold text-[10px] rounded flex-shrink-0">1.000 - 100.000 lei</span>
+                            </div>
+                            <div class="bg-white border border-slate-200 p-3 rounded-xl shadow-xs flex justify-between items-start">
+                                <div class="pr-2">
+                                    <p class="text-xs font-bold text-slate-950">Nerespectarea Proiectului Tehnic autorizat</p>
+                                    <p class="text-[10px] text-slate-500">Art. 26 alin. (1) lit. b)</p>
+                                </div>
+                                <span class="px-2 py-1 bg-amber-100 text-amber-800 font-bold text-[10px] rounded flex-shrink-0">5.000 - 20.000 lei</span>
+                            </div>
+                            <div class="bg-white border border-slate-200 p-3 rounded-xl shadow-xs flex justify-between items-start">
+                                <div class="pr-2">
+                                    <p class="text-xs font-bold text-slate-950">Neemitere avize/autorizații în termen de autorități</p>
+                                    <p class="text-[10px] text-slate-500">Art. 26 alin. (1) lit. h¹)</p>
+                                </div>
+                                <span class="px-2 py-1 bg-amber-100 text-amber-800 font-bold text-[10px] rounded flex-shrink-0">5.000 - 30.000 lei</span>
+                            </div>
+                            <div class="bg-white border border-slate-200 p-3 rounded-xl shadow-xs flex justify-between items-start">
+                                <div class="pr-2">
+                                    <p class="text-xs font-bold text-slate-950">Refuzul nejustificat de emitere A.C. sau C.U.</p>
+                                    <p class="text-[10px] text-slate-500">Art. 26 alin. (1) lit. h²)</p>
+                                </div>
+                                <span class="px-2 py-1 bg-amber-100 text-amber-800 font-bold text-[10px] rounded flex-shrink-0">1.000 - 5.000 lei</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notă unică critică a Legii 50 -->
+                <div class="mt-6 p-5 bg-rose-50 border border-rose-200 rounded-2xl flex items-start space-x-3.5">
+                    <div class="p-1.5 bg-rose-600 text-white rounded-lg flex-shrink-0">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-rose-950">FĂRĂ AVERTISMENT! (Art. 26 Alin. 6)</h4>
+                        <p class="text-xs text-rose-800 mt-1">Spre deosebire de majoritatea contravențiilor din România, în cazul încălcării Legii nr. 50/1991, **nu se poate aplica sancțiunea "Avertisment"**. Orice constatare a faptei obligă agentul constatator să aplice **amenda direct în intervalul legal**, conform Art. 26 alin. (6). De asemenea, termenul de prescripție a faptei este de **3 ani** de la data comiterii (Art. 31).</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Sub-footer cu disclaimer legal -->
+    <footer class="bg-slate-900 border-t border-slate-800 text-slate-400 py-6 text-xs text-center mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-2">
+            <p>© 2026 Ghid Interactiv Legea 50/1991. Proiect didactic realizat pe baza datelor textuale ale legii consolidat.</p>
+            <p class="text-slate-500">Utilizarea acestor informații se face în scop exclusiv informativ și nu înlocuiește consultanța juridică de specialitate oferită de arhitecți sau juriști în urbanism.</p>
+        </div>
+    </footer>
+
+    <!-- LOGICĂ ȘI SCENARII INTERACTIVE (VANILLA JAVASCRIPT) -->
+    <script>
+        // --- 1. Sincronizare Schimbare Tab ---
+        function switchTab(tabId) {
+            // Ascunde toate secțiunile de conținut
+            document.querySelectorAll('.tab-content').forEach(section => {
+                section.classList.replace('block', 'hidden');
+            });
+            // Dezactivează toate butoanele de meniu
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.className = "tab-btn w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900";
+            });
+
+            // Afișează secțiunea selectată
+            document.getElementById(`tab-${tabId}`).classList.replace('hidden', 'block');
+            
+            // Activează butonul corespunzător
+            const activeBtn = document.getElementById(`btn-${tabId}`);
+            activeBtn.className = "tab-btn w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-200 bg-brand-50 text-brand-700 border border-brand-100 shadow-sm";
+
+            // Sincronizează date interne adiționale în caz că se intră pe tab-uri cu layout dinamic
+            if (tabId === 'etape') {
+                setActiveStep(1);
+            } else if (tabId === 'emitenti') {
+                setIssuerCategory('normal');
+            } else if (tabId === 'scutiri') {
+                renderExemptions();
+            } else if (tabId === 'documentatie') {
+                setDocSubTab('dtac');
+            }
+        }
+
+        // --- 2. LOGICĂ QUIZ / DIAGNOSTIC ---
+        let currentQuizStep = 1;
+        function nextQuizStep(step) {
+            document.querySelectorAll('.quiz-step').forEach(s => s.classList.replace('block', 'hidden'));
+            document.getElementById(`quiz-step-${step}`).classList.replace('hidden', 'block');
+            currentQuizStep = step;
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-result').classList.add('hidden');
+            document.querySelectorAll('.quiz-step').forEach(s => s.classList.replace('block', 'hidden'));
+            document.getElementById('quiz-step-1').classList.replace('hidden', 'block');
+            currentQuizStep = 1;
+            
+            // reset radio selections to default
+            document.querySelector('input[name="nature"][value="construire"]').checked = true;
+            document.querySelector('input[name="patrimony"][value="monument"]').checked = true;
+            document.querySelector('input[name="structure"][value="afectat"]').checked = true;
+        }
+
+        function evaluateQuiz() {
+            const nature = document.querySelector('input[name="nature"]:checked').value;
+            const patrimony = document.querySelector('input[name="patrimony"]:checked').value;
+            const structure = document.querySelector('input[name="structure"]:checked').value;
+
+            const alertBox = document.getElementById('result-alert-box');
+            const iconContainer = document.getElementById('result-icon-container');
+            const titleEl = document.getElementById('result-title');
+            const descEl = document.getElementById('result-desc');
+            const legalEl = document.getElementById('result-legal');
+
+            let alertClass = "";
+            let iconSvg = "";
+            let titleText = "";
+            let descText = "";
+            let legalHtml = "";
+
+            // SCENARIUL 1: Monument Istoric (ORICE NATURĂ) -> Riscuri mari, adesea infracțiune penală
+            if (patrimony === 'monument') {
+                alertClass = "bg-rose-50 border-rose-200 text-rose-900";
+                iconSvg = `<svg class="w-8 h-8 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>`;
+                titleText = "CRITIC: Intervenție pe Monument Istoric";
+                descText = "Orice lucrare (construire, demolare, reparație sau chiar vopsire) pe un monument istoric clasat se supune unor rigori extreme. Executarea fără autorizație de construire reprezintă **INFRACȚIUNE PENALĂ**.";
+                legalHtml = `
+                    <p class="font-semibold text-rose-950">Articole aplicabile: Art. 3 alin. (1) lit. b) raportat la Art. 24 lit. a).</p>
+                    <ul class="list-disc list-inside space-y-2 mt-2">
+                        <li>Fără excepție, aveți nevoie de <strong>Autorizație de Construire</strong>, chiar și pentru lucrări care în mod normal sunt scutite.</li>
+                        <li>Este obligatoriu <strong>Avizul Conform al Ministerului Culturii</strong> sau al structurilor sale deconcentrate.</li>
+                        <li>Execuția neautorizată se pedepsește cu <strong>închisoare de la 3 luni la un an sau cu amendă penală</strong>.</li>
+                    </ul>
+                `;
+            }
+            // SCENARIUL 2: Lucrări de Construire/Demolare Normală (Fără Patrimoniu) -> Necesită Autorizație Standard
+            else if ((nature === 'construire' || nature === 'demolare') && patrimony === 'niciuna') {
+                alertClass = "bg-brand-50 border-brand-200 text-brand-900";
+                iconSvg = `<svg class="w-8 h-8 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`;
+                titleText = "AUTORIZARE STANDARD: Necesită Autorizație de Construire / Desființare";
+                descText = "Lucrările noi de construire, extindere sau demolările clădirilor fără valoare istorică necesită emiterea unei autorizații de construire/desființare prealabile.";
+                legalHtml = `
+                    <p class="font-semibold text-brand-950">Articole aplicabile: Art. 1 alin. (1), Art. 3 alin. (1) lit. a).</p>
+                    <ul class="list-disc list-inside space-y-2 mt-2">
+                        <li>Trebuie să obțineți mai întâi un <strong>Certificat de Urbanism (C.U.)</strong> pentru a afla avizele necesare.</li>
+                        <li>Se elaborează <strong>Documentația Tehnică (D.T.A.C. / D.T.A.D.)</strong> de către un proiectant autorizat.</li>
+                        <li>Termenul legal de emitere al autorizației este de maximum <strong>30 de zile</strong> de la depunerea dosarului complet.</li>
+                    </ul>
+                `;
+            }
+            // SCENARIUL 3: Reparații/Finisaje în Zonă Protejată -> În general autorizație sau procedură cu notificare prealabilă
+            else if (patrimony === 'zona_protejata') {
+                alertClass = "bg-amber-50 border-amber-200 text-amber-950";
+                iconSvg = `<svg class="w-8 h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>`;
+                titleText = "PROCEDURĂ SPECIALĂ: Zonă Protejată sau de Protecție a Monumentelor";
+                descText = "Deși imobilul nu este monument în sine, situarea sa în zona de protecție restricționează substanțial excepțiile standard ale legii.";
+                legalHtml = `
+                    <p class="font-semibold text-amber-900">Articole aplicabile: Art. 3 alin. (1) lit. b), Art. 11 alin. (2) & (4).</p>
+                    <ul class="list-disc list-inside space-y-2 mt-2">
+                        <li>Dacă lucrările nu modifică rezistența sau fațada, se pot executa <strong>fără autorizație doar după notificarea prealabilă</strong> și obținerea acordului scris al Direcției Județene de Cultură (timp de răspuns: max 30 de zile, conform Art. 11 alin. 5).</li>
+                        <li>Orice nerespectare sau lipsă a acordului Direcției de Cultură plasează fapta în sfera <strong>infracțiunilor</strong> (Art. 24 lit. a).</li>
+                    </ul>
+                `;
+            }
+            // SCENARIUL 4: Reparații care NU afectează structura/aspectul în zonă normală -> SCUTIT complet
+            else if (nature === 'reparatie_finisaj' && patrimony === 'niciuna' && structure === 'neafectat') {
+                alertClass = "bg-emerald-50 border-emerald-200 text-emerald-950";
+                iconSvg = `<svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+                titleText = "FĂRĂ AUTORIZAȚIE: Lucrare complet scutită conform Art. 11";
+                descText = "Lucrările dorite sunt considerate de întreținere curentă sau finisaje care nu afectează rezistența mecanică sau estetica arhitecturală.";
+                legalHtml = `
+                    <p class="font-semibold text-emerald-900">Articol aplicabil: Art. 11 alin. (1).</p>
+                    <p class="mt-2">Sunteți scutit de obținerea autorizației pentru lucrări precum:</p>
+                    <ul class="list-disc list-inside space-y-1 mt-1 text-xs">
+                        <li>Tâmplărie exterioară (dacă se păstrează forma și dimensiunea golurilor).</li>
+                        <li>Reparații la acoperiș sau învelitori (fără modificarea formei acestora).</li>
+                        <li>Zugrăveli și finisaje interioare / exterioare (fără modificarea elementelor de fațadă).</li>
+                        <li>Reparații la branșamente și instalații interioare în limitele proprietății.</li>
+                    </ul>
+                `;
+            }
+            // SCENARIUL 5: Compartimentare interioară NESTRUCTURALĂ -> SCUTIT conform Art. 11 alin. (1) lit. n)
+            else if (nature === 'compartimentare' && patrimony === 'niciuna' && structure === 'neafectat') {
+                alertClass = "bg-emerald-50 border-emerald-200 text-emerald-950";
+                iconSvg = `<svg class="w-8 h-8 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>`;
+                titleText = "SCUTIT: Compartimentare Nestructurală Demontabilă";
+                descText = "Modificările interioare care nu afectează rezistența (stâlpi, grinzi) și sunt realizate din materiale ușoare (ex: gips-carton) sunt scutite.";
+                legalHtml = `
+                    <p class="font-semibold text-emerald-900">Articol aplicabil: Art. 11 alin. (1) lit. n).</p>
+                    <ul class="list-disc list-inside space-y-2 mt-2">
+                        <li>Nu aveți nevoie de autorizație dacă pereții sunt din materiale ușoare, demontabili și nu reconfigurează structura clădirii.</li>
+                        <li><strong>Recomandare:</strong> Păstrați schița releveului inițial al apartamentului pentru a dovedi caracterul neinvaziv la o eventuală inspecție sau tranzacție notarială.</li>
+                    </ul>
+                `;
+            }
+            // SCENARIUL 6: Modificări Structurale sau Reparații care afectează structura/aspectul -> AUTORIZARE
+            else {
+                alertClass = "bg-brand-50 border-brand-200 text-brand-900";
+                iconSvg = `<svg class="w-8 h-8 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>`;
+                titleText = "AUTORIZARE OBLIGATORIE: Se modifică structura sau fațada";
+                descText = "Deși lucrarea este de reparație sau compartimentare, faptul că afectează structura de rezistență sau fațada exterioră anulează scutirea.";
+                legalHtml = `
+                    <p class="font-semibold text-brand-950">Articol aplicabil: Art. 3 alin. (1) lit. a).</p>
+                    <ul class="list-disc list-inside space-y-2 mt-2">
+                        <li>Necesită <strong>Autorizație de Construire</strong> standard.</li>
+                        <li>Este obligatorie o <strong>Expertiză Tehnică</strong> realizată de un expert atestat (pentru punerea în siguranță a întregii structuri).</li>
+                        <li>Proiectul tehnic trebuie verificat obligatoriu pentru cerințele de rezistență mecanică și stabilitate.</li>
+                    </ul>
+                `;
+            }
+
+            // Aplică stilurile dinamice
+            alertBox.className = `flex items-start space-x-4 p-5 rounded-2xl mb-6 shadow-sm border ${alertClass}`;
+            iconContainer.innerHTML = iconSvg;
+            titleEl.innerText = titleText;
+            descEl.innerHTML = descText;
+            legalEl.innerHTML = legalHtml;
+
+            // Arată ecranul cu rezultate
+            document.getElementById('quiz-step-3').classList.replace('block', 'hidden');
+            document.getElementById('quiz-result').classList.remove('hidden');
+        }
+
+        // --- 3. LOGICĂ ETAPE & TERMENE VIZUALE ---
+        const stepsData = {
+            1: {
+                title: "Etapa 1: Emiterea Certificatului de Urbanism",
+                deadline: "Maximum 15 zile lucrătoare (Art. 6 alin. 2)",
+                desc: "Certificatul de urbanism este actul de informare prin care autoritățile locale fac cunoscute solicitantului regimul juridic, economic și tehnic al terenului, precum și avizele necesare.",
+                warning: "Certificatul de urbanism nu conferă dreptul de a executa lucrări de construcții (Art. 6 alin. 5)."
+            },
+            2: {
+                title: "Etapa 2: Emiterea punctului de vedere de mediu",
+                deadline: "Notificare operativă după depunerea solicitării",
+                desc: "Se solicită autorității pentru protecția mediului evaluarea inițială a investiției pentru proiectele care nu necesită o evaluare de impact majoră.",
+                warning: "Măsurile de mediu stabilite nu pot fi modificate ulterior prin autorizația de construire."
+            },
+            3: {
+                title: "Etapa 3: Notificarea menținerii solicitării",
+                deadline: "Dacă se stabilește necesitatea evaluării impactului asupra mediului",
+                desc: "Pentru investițiile evaluate ca având impact major asupra mediului, solicitantul trebuie să notifice primăria competentă cu privire la menținerea intenției de autorizare pe baza ghidului de mediu emis.",
+                warning: "Evaluarea mediului se realizează integrat pentru întreaga investiție etapizată (Art. 6^1 alin. 2)."
+            },
+            4: {
+                title: "Etapa 4: Obținerea avizelor și acordurilor",
+                deadline: "Maximum 15 zile pentru avizatori (Regulă consolidată Art. 5 alin. 1^3)",
+                desc: "Conform legii, avizele cerute prin C.U. (utilități, siguranță la foc, etc.) se solicită concomitent de către proiectant/solicitant sau prin intermediul Comisiei pentru Acord Unic (C.A.U.).",
+                warning: "Este interzisă condiționarea emiterii unui aviz de obținerea prealabilă a altor avize (Art. 5 alin. 5)."
+            },
+            5: {
+                title: "Etapa 5: Elaborarea Documentației Tehnice (D.T.)",
+                deadline: "Termen în funcție de complexitatea proiectului",
+                desc: "D.T. reprezintă proiectul simplificat redactat de arhitect și ingineri (D.T.A.C., D.T.A.D., D.T.O.E.) care stă la baza emiterii autorizației și care va fi ulterior dezvoltat în Proiectul Tehnic (P.Th.) de execuție.",
+                warning: "Modificarea prevederilor D.T. după autorizare atrage nulitatea autorizației de construire."
+            },
+            6: {
+                title: "Etapa 6: Depunerea Documentației la Autoritate",
+                deadline: "Verificare operativă în maximum 5 zile lucrătoare (Art. 5^1 alin. 2)",
+                desc: "Depunerea dosarului complet la primărie sau consiliul județean. Aparatul de specialitate verifică dacă dosarul conține toate actele cerute, în caz contrar îl returnează în 5 zile.",
+                warning: "Răspunderea privind completitudinea documentației revine integral semnatarilor (proiectanților și verificatorilor)."
+            },
+            7: {
+                title: "Etapa 7: Emiterea Autorizației de Construire (A.C.)",
+                deadline: "Maximum 30 de zile de la depunerea completă (Art. 7 alin. 1)",
+                desc: "Actul final al administrației publice locale pe baza căruia este permisă începerea execuției fizice a lucrărilor. Valabilitatea stabilită la emitere este de maximum 24 de luni pentru începere.",
+                warning: "În regim de urgență stabilit local, autorizația se poate emite în 7 zile lucrătoare cu plata unei taxe suplimentare (Art. 7 alin. 1^6)."
+            }
+        };
+
+        function setActiveStep(stepId) {
+            // Update active visually in stepper
+            document.querySelectorAll('.step-btn').forEach(btn => {
+                btn.className = "step-btn flex flex-col items-center justify-center p-3 rounded-xl hover:bg-slate-100 text-slate-500 transition-all duration-150";
+            });
+            const activeBtn = document.getElementById(`step-btn-${stepId}`);
+            activeBtn.className = "step-btn flex flex-col items-center justify-center p-3 rounded-xl bg-brand-50 border border-brand-100 shadow-sm text-brand-700 font-semibold transition-all duration-150";
+
+            // Render active card content
+            const data = stepsData[stepId];
+            const container = document.getElementById('step-info-card');
+            
+            container.innerHTML = `
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-4 mb-4">
+                    <h3 class="text-lg font-bold text-slate-900">${data.title}</h3>
+                    <span class="px-3.5 py-1.5 bg-brand-100 text-brand-800 text-xs font-bold rounded-lg flex items-center shrink-0">
+                        <svg class="w-4 h-4 mr-1.5 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        ${data.deadline}
+                    </span>
+                </div>
+                <p class="text-sm text-slate-600 leading-relaxed">${data.desc}</p>
+                <div class="mt-4 p-4 bg-slate-50 rounded-xl border border-slate-100 flex items-start space-x-2.5">
+                    <svg class="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    <p class="text-xs text-slate-500"><strong class="text-slate-800">Atenție:</strong> ${data.warning}</p>
+                </div>
+            `;
+        }
+
+        // --- 4. LOGICĂ CINE EMITE AUTORIZAȚIA ---
+        const issuerData = {
+            normal: `
+                <h3 class="text-base font-bold text-slate-900">Structura UAT standard (Comune, Orașe, Municipii)</h3>
+                <p class="text-sm text-slate-600 mt-1">În cea mai mare parte a cazurilor, autorizațiile sunt emise la nivel local:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-white p-4 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs text-brand-600 uppercase">Primarii de Municipiu, Oraș sau Comună</h4>
+                        <p class="text-xs text-slate-500 mt-1">Emit autorizațiile pentru orice lucrare executată în teritoriul lor administrativ de bază.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs text-brand-600 uppercase">Președinții de Consilii Județene</h4>
+                        <p class="text-xs text-slate-500 mt-1">Emit (cu avizul primarilor) pentru proiecte care depășesc limita unei localități sau în localități unde primăria nu are angajat un arhitect-șef / urbanist autorizat în structurile proprii (Art. 4 alin. 1 lit. a).</p>
+                    </div>
+                </div>
+            `,
+            bucuresti: `
+                <h3 class="text-base font-bold text-slate-900">Împărțirea Competențelor în Municipiul București (Art. 4 lit. c & d)</h3>
+                <p class="text-sm text-slate-600 mt-1">În Capitală competențele se împart strict între Primarul General și Primarii de Sector:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-white p-4 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs text-slate-900 uppercase">Primarul General al Capitalei (PMB)</h4>
+                        <p class="text-xs text-slate-500 mt-1">Emite pentru lucrări în zone construite protejate, la clădiri clasate individual ca monument istoric sau în parcelări incluse în Lista monumentelor istorice, plus extinderi de rețele edilitare municipale principale sau artere majore de circulație administrabile de CGMB.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs text-brand-600 uppercase">Primarii de Sector (Sectoarele 1 - 6)</h4>
+                        <p class="text-xs text-slate-500 mt-1">Emit pentru toate celelalte lucrări aflate pe teritoriul administrativ al sectorului respectiv, care nu intră în atribuțiile stricte ale Primarului General (inclusiv monumente istorice din categoria ansamblurilor sau siturilor - Art. 4 lit. d).</p>
+                    </div>
+                </div>
+            `,
+            speciale: `
+                <h3 class="text-base font-bold text-slate-900">Lucrări Naționale sau cu Caracter Special (Art. 43)</h3>
+                <p class="text-sm text-slate-600 mt-1">Anumite proiecte de infrastructură publică de anvergură sau militare evită complet primăriile locale:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                    <div class="bg-white p-4 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs text-indigo-600 uppercase">Ministerul Transporturilor</h4>
+                        <p class="text-xs text-slate-500 mt-1">Emite autorizațiile direct pentru proiecte din infrastructura națională de transport (drumuri naționale, autostrăzi, căi ferate magistrale) și metroul din București (Art. 43 lit. b).</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-xl border border-slate-200">
+                        <h4 class="font-bold text-xs text-red-600 uppercase">Sistemul de Apărare (MApN, MAI, SRI, etc.)</h4>
+                        <p class="text-xs text-slate-500 mt-1">Realizează autorizarea internă pentru clădiri și amenajări militare sau cu caracter special de siguranță națională, în baza unor proceduri comune speciale agreate cu MDRAP (Art. 43 lit. a).</p>
+                    </div>
+                </div>
+            `
+        };
+
+        function setIssuerCategory(catId) {
+            document.querySelectorAll('.is-btn').forEach(btn => {
+                btn.className = "is-btn p-5 text-left border rounded-2xl bg-white border-slate-200 hover:border-slate-300 transition-all";
+            });
+            const activeBtn = document.getElementById(`is-btn-${catId}`);
+            activeBtn.className = "is-btn p-5 text-left border rounded-2xl bg-brand-50/50 border-brand-200 hover:border-brand-300 transition-all";
+
+            const container = document.getElementById('issuer-info-box');
+            container.innerHTML = issuerData[catId];
+        }
+
+        // --- 5. LOGICĂ LUCRĂRI SCUTITE (ART. 11) ---
+        const exemptionsData = [
+            { cat: "reparatii", title: "Reparații la împrejmuiri", desc: "Se păstrează forma acestora și materialele din care sunt executate.", details: "Art. 11 alin. (1) lit. a)" },
+            { cat: "reparatii", title: "Reparații la acoperișuri, învelitori sau terase", desc: "Dacă nu se modifică forma de bază.", details: "Art. 11 alin. (1) lit. b)" },
+            { cat: "finisaje", title: "Înlocuire tâmplărie interioară / exterioară", desc: "Dacă se păstrează forma și dimensiunile golurilor (chiar dacă se schimbă materialele).", details: "Art. 11 alin. (1) lit. c) & d)" },
+            { cat: "finisaje", title: "Reparații sobe și coșuri de fum", desc: "Repararea sau înlocuirea completă a elementelor de încălzire locală.", details: "Art. 11 alin. (1) lit. e)" },
+            { cat: "finisaje", title: "Finisaje interioare (zugrăveli, placaje, pardoseli)", desc: "Orice fel de tencuieli interioare, vopsitorii, pardoseli sau placaje interioare.", details: "Art. 11 alin. (1) lit. f)" },
+            { cat: "finisaje", title: "Reparații tencuieli și zugrăveli exterioare", desc: "Dacă nu se modifică elementele de fațadă și schema inițială de culori.", details: "Art. 11 alin. (1) lit. g)" },
+            { cat: "instalatii", title: "Instalații interioare și branșamente exterioare", desc: "Reparații sau înlocuiri în limitele proprietății deținute.", details: "Art. 11 alin. (1) lit. h)" },
+            { cat: "instalatii", title: "Panouri solare și sisteme fotovoltaice (Prosumatori)", desc: "Montarea pe clădiri, anexe sau sol cu notificare prealabilă și cu respectarea normativelor tehnice.", details: "Art. 11 alin. (7) lit. f)" },
+            { cat: "instalatii", title: "SGR - Automate de preluare ambalaje", desc: "Containere de maxim 25 mp plasate direct pe sol, în baza unui aviz de amplasare, fără fundații.", details: "Art. 11 alin. (7) lit. a¹)" },
+            { cat: "reparatii", title: "Întreținere infrastructură transport", desc: "Lucrări periodice fără modificarea traseului sau geometriei căilor de comunicație.", details: "Art. 11 alin. (1) lit. k)" }
+        ];
+
+        let activeExemptionCategory = 'all';
+
+        function renderExemptions() {
+            const listContainer = document.getElementById('exemptions-list');
+            const searchVal = document.getElementById('exemption-search').value.toLowerCase();
+            
+            listContainer.innerHTML = "";
+
+            const filtered = exemptionsData.filter(item => {
+                const matchesCat = activeExemptionCategory === 'all' || item.cat === activeExemptionCategory;
+                const matchesSearch = item.title.toLowerCase().includes(searchVal) || item.desc.toLowerCase().includes(searchVal);
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                listContainer.innerHTML = `
+                    <div class="text-center py-8 text-slate-400 text-sm">
+                        Nu s-au găsit lucrări scutite corespunzătoare criteriilor tale.
+                    </div>
+                `;
+                return;
+            }
+
+            filtered.forEach(item => {
+                const badgeColor = item.cat === 'reparatii' ? 'bg-amber-100 text-amber-800' : (item.cat === 'finisaje' ? 'bg-indigo-100 text-indigo-800' : 'bg-emerald-100 text-emerald-800');
+                const badgeLabel = item.cat.charAt(0).toUpperCase() + item.cat.slice(1);
+                
+                listContainer.innerHTML += `
+                    <div class="p-4 bg-white border border-slate-200/80 rounded-xl hover:shadow-xs transition duration-150 flex flex-col md:flex-row md:items-center justify-between gap-3">
+                        <div>
+                            <div class="flex items-center space-x-2">
+                                <span class="px-2 py-0.5 text-[9px] font-bold rounded uppercase tracking-wider ${badgeColor}">${badgeLabel}</span>
+                                <h4 class="font-bold text-slate-900 text-sm">${item.title}</h4>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1">${item.desc}</p>
+                        </div>
+                        <span class="text-[10px] text-slate-400 font-mono self-end md:self-center shrink-0">${item.details}</span>
+                    </div>
+                `;
+            });
+        }
+
+        function filterExemptionCategory(catId) {
+            document.querySelectorAll('.ex-cat-btn').forEach(btn => {
+                btn.className = "ex-cat-btn px-4 py-2.5 rounded-lg text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 transition";
+            });
+            const activeBtn = document.getElementById(`ex-cat-${catId}`);
+            activeBtn.className = "ex-cat-btn px-4 py-2.5 rounded-lg text-xs font-semibold bg-brand-600 text-white shadow-sm transition";
+
+            activeExemptionCategory = catId;
+            renderExemptions();
+        }
+
+        function filterExemptions() {
+            renderExemptions();
+        }
+
+        // --- 6. LOGICĂ DOCUMENTAȚIE TEHNICĂ D.T. ---
+        const docSubTabsData = {
+            dtac: `
+                <div>
+                    <h3 class="text-base font-bold text-slate-900">D.T.A.C. - Documentație Tehnică pentru Autorizarea Executării Lucrărilor de Construire</h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Se elaborează de proiectanți autorizați și se depune în format digital (semnat electronic) sau scriptic.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                    <div class="bg-slate-50 rounded-xl border border-slate-200 p-4 space-y-3">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-brand-700 flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-brand-600 mr-2"></span>
+                            I. Piese Scrise
+                        </h4>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li><strong>1. Lista și semnăturile proiectanților:</strong> Identificarea profesioniștilor responsabili de proiect.</li>
+                            <li><strong>2. Memoriu General:</strong> Date generale (amplasament, climat, geologie, seismicitate) și memorii pe specialități (arhitectură, structură, instalații).</li>
+                            <li><strong>3. Date și Indici Urbanistici:</strong> Suprafețe (desfășurată, la sol), regim de înălțime, indici POT (%) și CUT.</li>
+                            <li><strong>4. Deviz General:</strong> Întocmit conform legii de investitor / proiectant.</li>
+                            <li><strong>5. Anexe Obligatorii:</strong> Studiu geotehnic, referatele de verificare de verificatori atestați, avizele solicitate în C.U.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl border border-slate-200 p-4 space-y-3">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-brand-700 flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-brand-600 mr-2"></span>
+                            II. Piese Desenate
+                        </h4>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li><strong>1. Planuri Generale:</strong> Plan de încadrare în teritoriu (scara 1:1000 - 1:10000) și plan de situație vizat de OCPI teritorial (Stereo 70).</li>
+                            <li><strong>2. Planșe Arhitectură:</strong> Planurile cotate ale tuturor nivelurilor, planurile acoperișului, secțiuni caracteristice, fațade detaliate.</li>
+                            <li><strong>3. Planșe Structură:</strong> Planul fundațiilor (scara 1:50) și detalii tehnice de rezistență.</li>
+                            <li><strong>4. Scheme de Instalații:</strong> Schemele de funcționare ale instalațiilor principale (termice, electrice, sanitare).</li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+            dtad: `
+                <div>
+                    <h3 class="text-base font-bold text-slate-900">D.T.A.D. - Documentație Tehnică pentru Autorizarea Executării Lucrărilor de Desființare</h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Necesară în vederea demolării sau demontării unei clădiri sau structuri existente.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                    <div class="bg-slate-50 rounded-xl border border-slate-200 p-4 space-y-3">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-red-700 flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-red-600 mr-2"></span>
+                            I. Piese Scrise
+                        </h4>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li><strong>1. Lista proiectanților:</strong> Cadre tehnice acreditate (arhitecți/ingineri).</li>
+                            <li><strong>2. Memoriu General de Demolare:</strong> Istoricul clădirii, descrierea structurii și a materialelor constituente.</li>
+                            <li><strong>3. Fotografii Color:</strong> Format 9x12 cm ale tuturor fațadelor din teren, reprezentând detaliat starea actuală a clădirii de demolat.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl border border-slate-200 p-4 space-y-3">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-red-700 flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-red-600 mr-2"></span>
+                            II. Piese Desenate
+                        </h4>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li><strong>1. Planuri topografice:</strong> Plan de încadrare în teritoriu și plan de situație vizat de OCPI (precizând clar elementele ce se mențin / se demolează).</li>
+                            <li><strong>2. Releveul Clădirii:</strong> Planurile detaliate ale tuturor nivelurilor, secțiuni și fațade (scara 1:50 sau 1:100).</li>
+                            <li><strong>3. Planul rețelelor subterane:</strong> Detalierea utilităților care se dezafectează sau care se izolează în timpul demolării.</li>
+                        </ul>
+                    </div>
+                </div>
+            `,
+            dtoe: `
+                <div>
+                    <h3 class="text-base font-bold text-slate-900">D.T.O.E. - Documentația de Organizare a Execuției Lucrărilor</h3>
+                    <p class="text-xs text-slate-500 mt-0.5">Se depune, de regulă, împreună cu DTAC sau DTAD pentru a autoriza lucrările provizorii de șantier (incinte, barăci, depozite).</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
+                    <div class="bg-slate-50 rounded-xl border border-slate-200 p-4 space-y-3">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-700 flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-slate-600 mr-2"></span>
+                            I. Piese Scrise
+                        </h4>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li><strong>1. Descrierea lucrărilor provizorii:</strong> Descrierea barăcilor de șantier, a depozitelor, împrejmuirilor de securitate și a modului de acces.</li>
+                            <li><strong>2. Asigurarea racordării provizorii:</strong> Specificații tehnice privind branșamentele temporare la apă, canalizare și electricitate.</li>
+                            <li><strong>3. Protecția muncii:</strong> Măsuri esențiale pentru securitatea muncii pe șantier.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-slate-50 rounded-xl border border-slate-200 p-4 space-y-3">
+                        <h4 class="font-bold text-xs uppercase tracking-wider text-slate-700 flex items-center">
+                            <span class="w-2 h-2 rounded-full bg-slate-600 mr-2"></span>
+                            II. Piese Desenate
+                        </h4>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li><strong>1. Plan General de Organizare:</strong> Planul de situație general care evidențiază unde vor fi amplasate containerele, căile de acces provizorii, macaralele, utilajele grele și platformele de descărcare.</li>
+                        </ul>
+                    </div>
+                </div>
+            `
+        };
+
+        function setDocSubTab(subtabId) {
+            document.querySelectorAll('.doc-subtab-btn').forEach(btn => {
+                btn.className = "doc-subtab-btn border-b-2 border-transparent text-slate-500 hover:text-slate-800 font-medium px-4 py-2.5 text-sm";
+            });
+            const activeBtn = document.getElementById(`doc-subtab-${subtabId}`);
+            activeBtn.className = "doc-subtab-btn border-b-2 border-brand-600 text-brand-600 font-semibold px-4 py-2.5 text-sm";
+
+            const container = document.getElementById('doc-content-box');
+            container.innerHTML = docSubTabsData[subtabId];
+        }
+
+        // --- Inițializare la încărcarea paginii ---
+        window.onload = function() {
+            // Setează stările implicite ale tab-urilor active
+            switchTab('diagnostic');
+        }
+    </script>
+</body>
+</html>
