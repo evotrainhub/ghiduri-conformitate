@@ -31,6 +31,8 @@
   --coral-bg:#faeae7;
   --ssm:#7a4500;
   --ssm-bg:#fff3e0;
+  --med:#1a6b5a;
+  --med-bg:#e4f5f0;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
@@ -93,6 +95,8 @@ nav{background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;just
 .dc-a .dc-icon{background:var(--teal-bg)}
 .dc-g .dc-icon{background:var(--coral-bg)}
 .dc-s .dc-icon{background:var(--ssm-bg)}
+.dc-med{color:var(--med)}
+.dc-med .dc-icon{background:var(--med-bg)}
 .dc-name{font-size:12px;font-weight:700;line-height:1.3;color:var(--text)}
 .dc-count{font-size:11px;color:var(--text-light)}
 
@@ -123,6 +127,7 @@ nav{background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;just
 .tag-a{background:var(--teal-bg);color:var(--teal)}
 .tag-g{background:var(--coral-bg);color:var(--coral)}
 .tag-s{background:var(--ssm-bg);color:var(--ssm)}
+.tag-med{background:var(--med-bg);color:var(--med)}
 .ghid-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:0.375rem;line-height:1.35}
 .ghid-desc{font-size:13px;color:var(--text-mid);line-height:1.55;flex:1;margin-bottom:1.125rem}
 .ghid-btn{display:block;font-size:13px;font-weight:700;padding:9px 16px;border-radius:6px;text-align:center;transition:all 0.15s;cursor:pointer;border:none;width:100%;font-family:inherit}
@@ -264,6 +269,11 @@ footer a{color:rgba(255,255,255,0.4)}
         <div class="dc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
         <div class="dc-name">Securitate & Sănătate</div>
         <div class="dc-count">3 ghiduri</div>
+      </div>
+      <div class="domain-card dc-med" onclick="goTo('medical')">
+        <div class="dc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <div class="dc-name">Sistem Sanitar</div>
+        <div class="dc-count">5 ghiduri</div>
       </div>
     </div>
   </div>
@@ -454,6 +464,53 @@ footer a{color:rgba(255,255,255,0.4)}
       <div class="ghid-title">Legea 190/2018 — Aplicarea GDPR în România</div>
       <p class="ghid-desc">Particularitățile naționale, rolul ANSPDCP, sancțiuni și procedura de investigație — adaptat pentru DPO și management.</p>
       <button class="ghid-btn btn-cerere" onclick="openModal('Legea 190/2018 — Aplicarea GDPR în România')">Solicită acest ghid</button>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<hr class="divider">
+
+<div class="section-wrap" id="medical">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--med-bg)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--med)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+    <div>
+      <p class="section-label" style="color:var(--med)">Sistem Sanitar</p>
+      <h2 class="section-title">Conformitate pentru cabinete medicale și clinici</h2>
+      <p class="section-sub">Ghiduri pentru medici de familie, clinici private și spitale — GDPR medical, autorizare DSP, CNAS și legislație sanitară actualizată 2025-2026.</p>
+    </div>
+  </div>
+  <div class="ghiduri-grid">
+    <div class="ghid-card free">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-med">Sistem sanitar</span><span class="tag tag-g">GDPR</span></div><span class="card-badge badge-free">✓ Demo AI gratuit</span></div>
+      <div class="ghid-title">GDPR Cabinet Medical — Asistent AI</div>
+      <p class="ghid-desc">Protecția datelor pacienților, consimțământ, camere supraveghere, breșe de date — răspunsuri instant bazate pe legislația 2025-2026.</p>
+      <a href="/gdpr-medical-ai.html" class="ghid-btn btn-primary">Deschide asistentul AI →</a>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-med">Sistem sanitar</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Autorizare DSP — Înființare cabinet medical</div>
+      <p class="ghid-desc">Documente necesare, condiții de autorizare, înregistrare în Registrul unic al cabinetelor medicale — conform OG 124/1998 actualizată prin OG 9/2025.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Autorizare DSP — Înființare cabinet medical')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-med">Sistem sanitar</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Relația cu CNAS — Decontări și contractare</div>
+      <p class="ghid-desc">Norme contractuale CNAS, coduri de diagnostic, raportări, decontarea serviciilor medicale și gestionarea erorilor frecvente.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Relația cu CNAS — Decontări și contractare')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-med">Sistem sanitar</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">OMS 1101/2016 — Prevenirea infecțiilor asociate asistenței medicale</div>
+      <p class="ghid-desc">Obligații de prevenire a infecțiilor, proceduri de sterilizare, gestionarea deșeurilor medicale și pregătire pentru control DSP.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('OMS 1101/2016 — Prevenirea infecțiilor asociate asistenței medicale')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-med">Sistem sanitar</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Legea 46/2003 — Drepturile pacientului</div>
+      <p class="ghid-desc">Consimțământ informat, confidențialitate, refuzul tratamentului, gestionarea plângerilor — obligații legale pentru orice furnizor de servicii medicale.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Legea 46/2003 — Drepturile pacientului')">Solicită acest ghid</button>
     </div>
   </div>
 </div>
