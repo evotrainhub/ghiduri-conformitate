@@ -42,6 +42,8 @@
   --ssm-bg:#fff3e0;
   --med:#1a6b5a;
   --med-bg:#e4f5f0;
+  --edu:#2d5fa0;
+  --edu-bg:#e8eef8;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
@@ -106,6 +108,8 @@ nav{background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;just
 .dc-s .dc-icon{background:var(--ssm-bg)}
 .dc-med{color:var(--med)}
 .dc-med .dc-icon{background:var(--med-bg)}
+.dc-edu{color:var(--edu)}
+.dc-edu .dc-icon{background:var(--edu-bg)}
 .dc-name{font-size:12px;font-weight:700;line-height:1.3;color:var(--text)}
 .dc-count{font-size:11px;color:var(--text-light)}
 
@@ -137,6 +141,7 @@ nav{background:var(--navy);padding:0 2.5rem;display:flex;align-items:center;just
 .tag-g{background:var(--coral-bg);color:var(--coral)}
 .tag-s{background:var(--ssm-bg);color:var(--ssm)}
 .tag-med{background:var(--med-bg);color:var(--med)}
+.tag-edu{background:var(--edu-bg);color:var(--edu)}
 .ghid-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:0.375rem;line-height:1.35}
 .ghid-desc{font-size:13px;color:var(--text-mid);line-height:1.55;flex:1;margin-bottom:1.125rem}
 .ghid-btn{display:block;font-size:13px;font-weight:700;padding:9px 16px;border-radius:6px;text-align:center;transition:all 0.15s;cursor:pointer;border:none;width:100%;font-family:inherit}
@@ -254,6 +259,11 @@ footer a{color:rgba(255,255,255,0.4)}
         <div class="dc-name">Construcții</div>
         <div class="dc-count">4 ghiduri</div>
       </div>
+      <div class="domain-card dc-edu" onclick="goTo('educatie')">
+        <div class="dc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <div class="dc-name">Educație</div>
+        <div class="dc-count">13 ghiduri</div>
+      </div>
       <div class="domain-card dc-iso" onclick="goTo('iso')">
         <div class="dc-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg></div>
         <div class="dc-name">Standarde ISO</div>
@@ -323,6 +333,99 @@ footer a{color:rgba(255,255,255,0.4)}
       <div class="ghid-title">HG 273/1994 — Recepția lucrărilor de construcții</div>
       <p class="ghid-desc">Procedura de recepție la terminarea lucrărilor și recepția finală — comisii, documente, termene și responsabilități legale.</p>
       <button class="ghid-btn btn-cerere" onclick="openModal('HG 273/1994 — Recepția lucrărilor de construcții')">Solicită acest ghid</button>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="section-wrap" id="educatie">
+  <div class="section-header">
+    <div class="section-icon" style="background:var(--edu-bg)"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--edu)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+    <div>
+      <p class="section-label" style="color:var(--edu)">Educație & Formare Profesională</p>
+      <h2 class="section-title">Acreditare, calitate și conformitate în educație</h2>
+      <p class="section-sub">Ghiduri pentru școli, universități, grădinițe și furnizori de formare profesională — ARACIP, ARACIS, legislație educațională actualizată 2025-2026.</p>
+    </div>
+  </div>
+  <div class="ghiduri-grid">
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-edu">Educație</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Acreditare ARACIP — Standarde și evaluare instituțională</div>
+      <p class="ghid-desc">Standardele de acreditare pentru unități de învățământ preuniversitar, documente obligatorii, pregătirea pentru vizita de evaluare externă și gestionarea recomandărilor ARACIP.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Acreditare ARACIP — Standarde și evaluare instituțională')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-edu">Educație</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Acreditare ARACIS — Asigurarea calității în învățământul superior</div>
+      <p class="ghid-desc">Standarde și indicatori de performanță pentru universități și programe de studii, procedura de evaluare externă, autorizare și acreditare — conform metodologiei ARACIS 2024-2026.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Acreditare ARACIS — Asigurarea calității în învățământul superior')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-edu">Educație</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Legea Educației Naționale 198/2023 — Obligații instituționale</div>
+      <p class="ghid-desc">Principalele modificări față de Legea 1/2011, obligații pentru directori și consilii de administrație, structura anului școlar și universitare, drepturi și obligații ale personalului didactic.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Legea Educației Naționale 198/2023 — Obligații instituționale')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-edu">Educație</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Autorizare furnizori de formare profesională — ANC</div>
+      <p class="ghid-desc">Procedura de autorizare ANC, dosarul de autorizare, standarde ocupaționale, organizarea programelor de formare și obligații de raportare — conform OG 129/2000 actualizată.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Autorizare furnizori de formare profesională — ANC')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-edu">Educație</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">GDPR în instituțiile de învățământ — Date elevi și studenți</div>
+      <p class="ghid-desc">Prelucrarea datelor elevilor și studenților, consimțământul părinților, platforme educaționale online, CCTV în școli și obligații față de ANSPDCP — ghid practic 2026.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('GDPR în instituțiile de învățământ — Date elevi și studenți')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-edu">Educație</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">OUG 75/2005 — Asigurarea calității în educație (CEAC)</div>
+      <p class="ghid-desc">Sistemul intern de calitate, rolul CEAC, proceduri obligatorii de autoevaluare, rapoarte anuale și pregătirea pentru evaluarea externă ARACIP/ARACIS.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('OUG 75/2005 — Asigurarea calității în educație (CEAC)')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-edu">Educație</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Statutul personalului didactic — Legea 198/2023</div>
+      <p class="ghid-desc">Drepturi și obligații, sancțiuni disciplinare, gradații de merit, titularizare, norma didactică și proceduri de evaluare — ghid practic pentru directori și departamente HR din educație.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Statutul personalului didactic — Legea 198/2023')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-edu">Educație</span><span class="tag tag-edu" style="background:#f0e8fb;color:#5b2d8a">Privat</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Autorizare unități private de învățământ — Legea 1/2011 art. 361</div>
+      <p class="ghid-desc">Procedura completă de înființare și autorizare a unităților private, dosarul de autorizare, condiții de funcționare și reautorizare periodică.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Autorizare unități private de învățământ — Legea 1/2011 art. 361')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-edu">Educație</span><span class="tag tag-edu" style="background:#f0e8fb;color:#5b2d8a">Privat</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Ordinul 4183/2022 — Organizarea și funcționarea grădinițelor private</div>
+      <p class="ghid-desc">Condiții specifice pentru grădinițe private: spații, personal, documente obligatorii, tarife, relația cu ISJ și procedura de autorizare — ghid complet pentru fondatori și directori.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Ordinul 4183/2022 — Organizarea și funcționarea grădinițelor private')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-edu">Educație</span><span class="tag tag-edu" style="background:#e8eef8;color:#2d5fa0">Universitar</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Carta universitară și autonomia universitară — Obligații și limite legale</div>
+      <p class="ghid-desc">Obligații legale ale senatului universitar, limite ale autonomiei instituționale, răspundere juridică, guvernanță universitară și transparență instituțională.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Carta universitară și autonomia universitară — Obligații și limite legale')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-edu">Educație</span><span class="tag tag-edu" style="background:#e8eef8;color:#2d5fa0">Universitar</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Legea 288/2004 — Organizarea studiilor universitare (Bologna)</div>
+      <p class="ghid-desc">Structura ciclurilor de studii (licență, master, doctorat), credite ECTS, recunoașterea și echivalarea diplomelor, mobilitate academică și conformitate cu cerințele spațiului european al educației.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Legea 288/2004 — Organizarea studiilor universitare (Bologna)')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-edu">Educație</span><span class="tag tag-edu" style="background:#e8eef8;color:#2d5fa0">Universitar</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Etică și integritate academică — Legea 206/2004 actualizată</div>
+      <p class="ghid-desc">Proceduri antiplagianism, constituirea și funcționarea comisiilor de etică, sancțiuni, gestionarea sesizărilor și conformitate cu standardele CNATDCU — ghid practic pentru universități.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Etică și integritate academică — Legea 206/2004 actualizată')">Solicită acest ghid</button>
+    </div>
+    <div class="ghid-card cerere">
+      <div class="card-top"><div class="card-tags"><span class="tag tag-edu">Educație</span><span class="tag tag-edu" style="background:#e3f5e8;color:#1a6b3a">AI Act</span></div><span class="card-badge badge-cerere">La cerere</span></div>
+      <div class="ghid-title">Utilizarea AI în educație — Politici instituționale și EU AI Act</div>
+      <p class="ghid-desc">Cum elaborezi o politică instituțională de utilizare a AI, obligații conform EU AI Act 2024 pentru instituțiile de învățământ, ghid de utilizare etică pentru cadre didactice și studenți — actualizat 2026.</p>
+      <button class="ghid-btn btn-cerere" onclick="openModal('Utilizarea AI în educație — Politici instituționale și EU AI Act')">Solicită acest ghid</button>
     </div>
   </div>
 </div>
