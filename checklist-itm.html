@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ești pregătit de un control ITM? Test gratuit de conformitate | Ghiduri Conformitate</title>
+<meta name="description" content="Verifică gratuit, în 3 minute, cât de pregătită e firma ta pentru un control ITM: REGES-Online, contracte de muncă, SSM, pontaj, regulament intern. Scor de risc instant." />
+<link rel="canonical" href="https://ghiduri-conformitate.ro/checklist-itm.html" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Checklist Control ITM",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RON" },
+  "description": "Instrument gratuit de autoevaluare a pregătirii pentru un control al Inspecției Teritoriale de Muncă (ITM), pentru angajatorii din România.",
+  "inLanguage": "ro",
+  "provider": { "@type": "Organization", "name": "Ghiduri Conformitate", "url": "https://ghiduri-conformitate.ro" }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --ink:#1b2a41;        /* albastru registru */
+    --paper:#fafaf7;      /* hârtie de dosar */
+    --line:#d9d6cc;
+    --muted:#5b6472;
+    --stamp-red:#b3282d;  /* ștampilă */
+    --ok:#2e7d5b;
+    --mid:#c98a12;
+    --radius:6px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto} *{transition:none!important;animation:none!important}}
+  body{background:var(--paper);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.55}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+
+  /* ── antet tip dosar ───────────────────────────── */
+  header{border-bottom:3px double var(--ink);padding:36px 0 28px;background:
+    repeating-linear-gradient(0deg,transparent 0 31px,rgba(27,42,65,.045) 31px 32px)}
+  .dosar-eticheta{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;
+    text-transform:uppercase;border:1.5px solid var(--ink);padding:4px 10px;margin-bottom:16px;background:#fff}
+  h1{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,5vw,44px);line-height:1.08;letter-spacing:-.01em;max-width:16ch}
+  .subtitlu{margin-top:14px;font-size:17px;color:var(--muted);max-width:56ch}
+  .meta-line{margin-top:18px;display:flex;gap:18px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted)}
+  .meta-line strong{color:var(--ink)}
+
+  /* ── progres ───────────────────────────────────── */
+  .progress-shell{position:sticky;top:0;z-index:9;background:var(--paper);border-bottom:1px solid var(--line);padding:10px 0}
+  .progress-inner{display:flex;align-items:center;gap:14px}
+  .bar{flex:1;height:6px;background:#e8e6de;border-radius:99px;overflow:hidden}
+  .bar i{display:block;height:100%;width:0%;background:var(--ink);transition:width .25s ease}
+  .progress-count{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--muted);white-space:nowrap}
+
+  /* ── secțiuni ─────────────────────────────────── */
+  section.cat{padding:34px 0 8px}
+  .cat-head{display:flex;align-items:baseline;gap:12px;border-bottom:1.5px solid var(--ink);padding-bottom:8px;margin-bottom:6px}
+  .cat-code{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:13px;background:var(--ink);color:var(--paper);padding:2px 8px}
+  .cat-head h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:20px}
+  .cat-note{font-size:13.5px;color:var(--muted);margin:8px 0 4px}
+
+  .q{border-bottom:1px solid var(--line);padding:16px 0}
+  .q:last-child{border-bottom:none}
+  .q-text{font-size:15.5px;font-weight:500;max-width:62ch}
+  .q-text .critic{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.1em;color:var(--stamp-red);
+    border:1px solid var(--stamp-red);padding:1px 6px;margin-left:8px;text-transform:uppercase;white-space:nowrap;vertical-align:2px}
+  .q-hint{font-size:13px;color:var(--muted);margin-top:4px;max-width:60ch}
+  .opts{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .opts button{font-family:'IBM Plex Sans',sans-serif;font-size:14px;font-weight:500;padding:8px 18px;border-radius:var(--radius);
+    border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+  .opts button:hover{border-color:var(--ink)}
+  .opts button:focus-visible{outline:3px solid var(--mid);outline-offset:2px}
+  .opts button[data-sel="1"].v-da{background:var(--ok);border-color:var(--ok);color:#fff}
+  .opts button[data-sel="1"].v-partial{background:var(--mid);border-color:var(--mid);color:#fff}
+  .opts button[data-sel="1"].v-nu{background:var(--stamp-red);border-color:var(--stamp-red);color:#fff}
+
+  /* ── verdict ──────────────────────────────────── */
+  .verdict-zone{margin:44px 0 20px;text-align:center}
+  #calcBtn{font-family:'Archivo',sans-serif;font-weight:700;font-size:17px;letter-spacing:.02em;background:var(--ink);
+    color:var(--paper);border:none;border-radius:var(--radius);padding:16px 34px;cursor:pointer}
+  #calcBtn:hover{background:#101d30}
+  #calcBtn:focus-visible{outline:3px solid var(--mid);outline-offset:2px}
+  .missing-warn{margin-top:10px;font-size:13.5px;color:var(--stamp-red);display:none}
+
+  #rezultat{display:none;margin:36px 0 10px;border:2px solid var(--ink);background:#fff;padding:34px 26px;position:relative;overflow:hidden}
+  .stamp{position:absolute;top:18px;right:-8px;transform:rotate(8deg);font-family:'Archivo',sans-serif;font-weight:800;
+    font-size:clamp(18px,3.4vw,26px);letter-spacing:.12em;text-transform:uppercase;padding:8px 22px;
+    border:3px solid currentColor;border-radius:4px;opacity:.9;mix-blend-mode:multiply}
+  .stamp.ok{color:var(--ok)} .stamp.mid{color:var(--mid)} .stamp.bad{color:var(--stamp-red)}
+  .scor-num{font-family:'Archivo',sans-serif;font-weight:800;font-size:64px;line-height:1}
+  .scor-label{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
+  .verdict-text{margin-top:18px;font-size:16px;max-width:58ch}
+  .vuln{margin-top:22px;text-align:left}
+  .vuln h3{font-family:'Archivo',sans-serif;font-size:16px;margin-bottom:8px}
+  .vuln li{margin:8px 0 8px 20px;font-size:14.5px}
+  .vuln .amenda{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--stamp-red)}
+  .cta{margin-top:26px;padding-top:20px;border-top:1px dashed var(--line)}
+  .cta p{font-size:14.5px;color:var(--muted);max-width:56ch}
+  .cta a{display:inline-block;margin-top:12px;font-family:'Archivo',sans-serif;font-weight:700;background:var(--stamp-red);
+    color:#fff;text-decoration:none;padding:13px 26px;border-radius:var(--radius)}
+  .cta a:hover{background:#8f1f24}
+  .cta a:focus-visible{outline:3px solid var(--mid);outline-offset:2px}
+
+  footer{margin-top:48px;border-top:1px solid var(--line);padding:22px 0 40px;font-size:12.5px;color:var(--muted)}
+  footer a{color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="dosar-eticheta">Autoevaluare · Dosar angajator</span>
+    <h1>Ești pregătit de un control ITM?</h1>
+    <p class="subtitlu">Răspunde la 18 întrebări despre documentele și practicile firmei tale. Primești pe loc un scor de risc și lista punctelor vulnerabile — exact zonele pe care inspectorii le verifică primele.</p>
+    <div class="meta-line">
+      <span>Durată: <strong>~3 minute</strong></span>
+      <span>Cost: <strong>gratuit</strong></span>
+      <span>Datele: <strong>nu părăsesc browserul tău</strong></span>
+    </div>
+  </div>
+</header>
+
+<div class="progress-shell">
+  <div class="wrap progress-inner">
+    <div class="bar"><i id="barFill"></i></div>
+    <span class="progress-count"><span id="done">0</span>/18 răspunsuri</span>
+  </div>
+</div>
+
+<main class="wrap" id="chestionar"></main>
+
+<div class="wrap verdict-zone">
+  <button id="calcBtn" type="button">Calculează scorul de risc</button>
+  <p class="missing-warn" id="warn">Mai ai întrebări fără răspuns — completează-le pentru un scor corect.</p>
+</div>
+
+<div class="wrap"><div id="rezultat" role="region" aria-live="polite">
+  <div class="stamp" id="stamp"></div>
+  <div class="scor-num" id="scorNum">–</div>
+  <div class="scor-label">scor de conformitate</div>
+  <p class="verdict-text" id="verdictText"></p>
+  <div class="vuln" id="vulnBox" style="display:none">
+    <h3>Punctele tale vulnerabile, în ordinea gravității</h3>
+    <ul id="vulnList"></ul>
+  </div>
+  <div class="cta">
+    <p>Acest test e orientativ. Dacă vrei un ghid de pregătire personalizat pe firma ta — cu documentele exacte, termenele și modelele de acte — îl pregătim la cerere.</p>
+    <a id="ctaLink" href="mailto:evotrainhub@gmail.com?subject=Solicitare%20ghid%20preg%C4%83tire%20control%20ITM">Solicită ghidul personalizat</a>
+  </div>
+</div></div>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Notă:</strong> instrument informativ și educațional, bazat pe legislația muncii în vigoare la 1 iulie 2026 (Codul muncii, HG 295/2025 – REGES-Online, Legea 319/2006 – SSM, Legea 283/2024). Nu reprezintă consultanță juridică. Sancțiunile menționate sunt cele prevăzute de lege la data publicării și pot fi actualizate.</p>
+    <p style="margin-top:8px">Un instrument <a href="https://ghiduri-conformitate.ro/">Ghiduri Conformitate</a>.</p>
+  </div>
+</footer>
+
+<script>
+const CATEGORII = [
+  {
+    code:"A", nume:"REGES-Online și contractele de muncă",
+    nota:"Din 1 ianuarie 2026, Revisal nu mai există. Singurul registru legal este REGES-Online — primul lucru verificat la orice control.",
+    intrebari:[
+      {t:"Firma are cont activ în REGES-Online și toate contractele active sunt înregistrate acolo?", critic:true,
+       hint:"Neînregistrarea se sancționează cu amenzi între 15.000 și 20.000 lei.", amenda:"15.000–20.000 lei"},
+      {t:"Fiecare angajat a semnat contractul individual de muncă cel târziu în ziua anterioară începerii activității?", critic:true,
+       hint:"Munca fără CIM (muncă nedeclarată) e sancțiunea cea mai dură din portofoliul ITM.", amenda:"20.000 lei / persoană"},
+      {t:"Modificările contractuale (salariu, funcție, normă) sunt transmise în REGES în termenele legale?",
+       hint:"Regula generală: înainte de producerea efectelor; sporurile și adaosurile — în max. 20 de zile lucrătoare.", amenda:"amendă cf. HG 295/2025"},
+      {t:"Concediile medicale și suspendările sunt raportate în REGES în 3 zile lucrătoare?",
+       hint:"Obligație nouă, introdusă odată cu REGES-Online — mulți angajatori o ratează.", amenda:"amendă cf. HG 295/2025"}]
+  },
+  {
+    code:"B", nume:"Dosarele de personal",
+    nota:"Inspectorii cer dosarul complet al unui angajat ales aleatoriu. Dacă acela e în regulă, presiunea scade.",
+    intrebari:[
+      {t:"Fiecare angajat are dosar de personal complet (CIM, acte adiționale, acte de identitate, acte de studii)?",
+       hint:"Dosarul se prezintă inspectorului la cerere, la sediul unde lucrează angajatul.", amenda:"amendă cf. HG 295/2025"},
+      {t:"Fișele de post sunt semnate de angajați și reflectă activitatea reală?",
+       hint:"O fișă de post generică, nesemnată sau contrazisă de realitate e un steag roșu clasic.", amenda:"1.500–3.000 lei"},
+      {t:"Păstrezi dovezile (recipisele) de transmitere în REGES, arhivate și accesibile?",
+       hint:"Confirmările digitale de transmitere țin loc de probă la control.", amenda:"indirect: sarcina probei"}
+    ]
+  },
+  {
+    code:"C", nume:"Timpul de muncă și salarizarea",
+    nota:"A doua zonă ca frecvență a sancțiunilor, după munca nedeclarată.",
+    intrebari:[
+      {t:"Ții evidența zilnică a orelor de muncă (pontaj), cu ora de începere și de sfârșit, pentru fiecare angajat?", critic:true,
+       hint:"Codul muncii, art. 119 — evidența orelor e obligatorie și se prezintă la control.", amenda:"1.500–3.000 lei"},
+      {t:"Orele suplimentare sunt compensate cu timp liber sau plătite cu sporul legal?",
+       hint:"Compensare cu ore libere în 90 de zile sau spor de minimum 75%.", amenda:"1.500–3.000 lei / persoană"},
+      {t:"Poți dovedi plata salariilor (extrase, state de plată semnate) pentru ultimele 12 luni?",
+       hint:"Plata cu întârziere sau nedovedită e verificată sistematic.", amenda:"5.000–10.000 lei / persoană"},
+      {t:"Salariul de bază respectă minimul brut pe economie în vigoare, inclusiv pentru fracțiuni de normă?",
+       hint:"Verifică și contractele part-time vechi, neactualizate la ultimele majorări. Amendă majorată prin Legea 283/2024.", amenda:"3.000–5.000 lei / persoană (max. cumulat 200.000 lei)"}
+    ]
+  },
+  {
+    code:"D", nume:"Regulament intern și documente colective",
+    nota:"Documentele „de sertar” — există la toată lumea, dar rar sunt opozabile legal.",
+    intrebari:[
+      {t:"Ai regulament intern actualizat, adus la cunoștința fiecărui angajat, cu dovadă de luare la cunoștință?",
+       hint:"Fără dovada de comunicare, regulamentul nu îți e opozabil — nu poți sancționa disciplinar pe baza lui.", amenda:"sancțiunile disciplinare aplicate devin anulabile"},
+      {t:"Dacă ai cel puțin 10 angajați: ai inițiat negocierea colectivă (sau ai CCM încheiat)?",
+       hint:"Legea 367/2022 a coborât pragul de la 21 la 10 angajați. Lipsa inițierii negocierii se amendează.", amenda:"15.000–20.000 lei"},
+      {t:"Contractele part-time și cele pe durată determinată au clauzele obligatorii specifice?",
+       hint:"La part-time: repartizarea programului. Lipsa clauzelor = risc de recalificare în normă întreagă.", amenda:"recalificare + diferențe salariale"}
+    ]
+  },
+  {
+    code:"E", nume:"Sănătate și securitate în muncă (SSM)",
+    nota:"Control separat sau simultan — dar dosarul SSM e cerut aproape întotdeauna.",
+    intrebari:[
+      {t:"Fiecare angajat are fișă de instruire SSM semnată (instruire introductiv-generală + la locul de muncă + periodică)?", critic:true,
+       hint:"Fișa de instruire lipsă e printre cele mai frecvente sancțiuni SSM.", amenda:"4.000–8.000 lei"},
+      {t:"Ai evaluarea riscurilor pentru fiecare post de lucru, actualizată?",
+       hint:"Obligatorie prin Legea 319/2006, indiferent de mărimea firmei — inclusiv pentru birouri.", amenda:"4.000–8.000 lei"},
+      {t:"Toți angajații au fișe de aptitudine de la medicina muncii, valabile (examen la angajare + periodic)?",
+       hint:"Angajat fără fișă de aptitudine = angajat care legal nu poate presta munca.", amenda:"1.500–3.000 lei (art. 260 lit. m Codul muncii)"},
+      {t:"Pentru telemuncă / munca la domiciliu: ai clauzele specifice în contract și instruirea SSM adaptată?",
+       hint:"Dacă nu ai angajați în telemuncă, răspunde „Da” — nu ți se aplică.", amenda:"amendă cf. legislației telemuncii"}
+    ]
+  }
+];
+
+// ── randare ─────────────────────────────────────────
+const mount = document.getElementById('chestionar');
+let raspunsuri = {}; // id -> 'da' | 'partial' | 'nu'
+let qIndex = 0;
+const TOTAL = CATEGORII.reduce((s,c)=>s+c.intrebari.length,0);
+
+CATEGORII.forEach(cat=>{
+  const sec = document.createElement('section');
+  sec.className = 'cat';
+  sec.innerHTML = `<div class="cat-head"><span class="cat-code">${cat.code}</span><h2>${cat.nume}</h2></div>
+                   <p class="cat-note">${cat.nota}</p>`;
+  cat.intrebari.forEach(q=>{
+    const id = 'q' + (qIndex++);
+    q._id = id;
+    const div = document.createElement('div');
+    div.className = 'q';
+    div.innerHTML = `
+      <p class="q-text">${q.t}${q.critic ? '<span class="critic">critic</span>' : ''}</p>
+      ${q.hint ? `<p class="q-hint">${q.hint}</p>` : ''}
+      <div class="opts" role="group" aria-label="Răspuns">
+        <button type="button" class="v-da" data-v="da">Da</button>
+        <button type="button" class="v-partial" data-v="partial">Parțial</button>
+        <button type="button" class="v-nu" data-v="nu">Nu / Nu știu</button>
+      </div>`;
+    div.querySelectorAll('.opts button').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        div.querySelectorAll('.opts button').forEach(b=>b.removeAttribute('data-sel'));
+        btn.setAttribute('data-sel','1');
+        raspunsuri[id] = btn.dataset.v;
+        actualizeazaProgres();
+      });
+    });
+    sec.appendChild(div);
+  });
+  mount.appendChild(sec);
+});
+
+function actualizeazaProgres(){
+  const n = Object.keys(raspunsuri).length;
+  document.getElementById('done').textContent = n;
+  document.getElementById('barFill').style.width = (n/TOTAL*100) + '%';
+}
+
+// ── scor ────────────────────────────────────────────
+document.getElementById('calcBtn').addEventListener('click',()=>{
+  const toate = CATEGORII.flatMap(c=>c.intrebari);
+  const lipsa = toate.filter(q=>!raspunsuri[q._id]);
+  const warn = document.getElementById('warn');
+  if(lipsa.length){ warn.style.display='block'; return; }
+  warn.style.display='none';
+
+  let max=0, obtinut=0;
+  const probleme=[];
+  toate.forEach(q=>{
+    const pondere = q.critic ? 3 : 1;
+    max += pondere;
+    const r = raspunsuri[q._id];
+    if(r==='da') obtinut += pondere;
+    else{
+      if(r==='partial') obtinut += pondere*0.5;
+      probleme.push({q, grav: pondere*(r==='nu'?1:0.5)});
+    }
+  });
+  const scor = Math.round(obtinut/max*100);
+
+  const stamp = document.getElementById('stamp');
+  const verdict = document.getElementById('verdictText');
+  if(scor>=85){
+    stamp.textContent='Risc scăzut'; stamp.className='stamp ok';
+    verdict.textContent='Dosarul tău pare în ordine pe zonele principale. Rămân de închis punctele de mai jos — la un control, exact acestea ar fi consemnate în procesul-verbal.';
+  }else if(scor>=60){
+    stamp.textContent='Risc mediu'; stamp.className='stamp mid';
+    verdict.textContent='Ai fundația, dar un control ITM ar găsi neconformități sancționabile. Punctele de mai jos sunt ordinea recomandată de remediere — începe cu cele marcate „critic”.';
+  }else{
+    stamp.textContent='Risc ridicat'; stamp.className='stamp bad';
+    verdict.textContent='În forma actuală, un control ITM s-ar încheia foarte probabil cu sancțiuni, unele consistente. Vestea bună: majoritatea punctelor de mai jos se pot remedia în câteva săptămâni, dacă le iei în ordine.';
+  }
+  document.getElementById('scorNum').textContent = scor + '%';
+
+  const box = document.getElementById('vulnBox');
+  const list = document.getElementById('vulnList');
+  list.innerHTML='';
+  probleme.sort((a,b)=>b.grav-a.grav).slice(0,6).forEach(p=>{
+    const li=document.createElement('li');
+    li.innerHTML = `${p.q.t} <span class="amenda">· sancțiune posibilă: ${p.q.amenda}</span>`;
+    list.appendChild(li);
+  });
+  box.style.display = probleme.length ? 'block' : 'none';
+
+  const rez = document.getElementById('rezultat');
+  rez.style.display='block';
+  rez.scrollIntoView({behavior:'smooth', block:'start'});
+});
+</script>
+</body>
+</html>
