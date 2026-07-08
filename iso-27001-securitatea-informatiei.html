@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ISO 27001:2022 - Securitatea informației: controale și certificare | Ghiduri Conformitate</title>
+<meta name="description" content="Structura Anexei A cu 93 de controale, managementul riscurilor de securitate și pregătirea pentru audit de certificare ISO 27001:2022. Actualizat 2026.">
+<link rel="canonical" href="https://ghiduri-conformitate.ro/iso-27001-securitatea-informatiei.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "ISO 27001:2022, Securitatea informației",
+      "description": "Structura controalelor din Anexa A, managementul riscurilor de securitate și pregătirea pentru audit de certificare.",
+      "author": { "@type": "Organization", "name": "Ghiduri Conformitate" },
+      "publisher": { "@type": "Organization", "name": "EvoTrainHub" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Ce s-a schimbat între ISO 27001:2013 și ediția 2022?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Numărul de controale din Anexa A a scăzut de la 114 la 93, prin regrupare și consolidare, organizate acum în patru categorii: organizaționale, pentru personal, fizice și tehnologice. Au fost introduse și controale noi, legate de securitatea cloud și de amenințările cibernetice moderne." }
+        },
+        {
+          "@type": "Question",
+          "name": "Este obligatorie implementarea tuturor celor 93 de controale din Anexa A?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Nu. Organizația selectează controalele relevante pe baza propriei evaluări de risc, documentată în Declarația de Aplicabilitate (Statement of Applicability), justificând orice control exclus." }
+        },
+        {
+          "@type": "Question",
+          "name": "Cât durează implementarea unui sistem de management al securității informației până la certificare?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Variază în funcție de mărimea și complexitatea organizației, dar un interval realist este de 6 până la 12 luni, incluzând evaluarea de risc, implementarea controalelor și un ciclu de audit intern înainte de auditul de certificare." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0c2340;--accent:#4e3690;--accent-dark:#3a2870;--accent-light:#eeebf9;
+  --text:#1a2733;--text-mid:#4a5c6a;--text-light:#7a8f9e;--border:#dde5eb;
+  --bg:#f5f7fa;--white:#fff;--stamp-red:#8a3020;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
+a{color:inherit;text-decoration:none}
+nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.nav-brand{color:#fff;font-size:14px;font-weight:700}
+.nav-brand span{color:#6cb8e8;font-weight:400}
+.nav-back{color:rgba(255,255,255,0.6);font-size:13px;display:flex;align-items:center;gap:5px}
+.nav-back:hover{color:#fff}
+.wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
+.article-head{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#c8bdf0;background:rgba(200,189,240,0.12);border:1px solid rgba(200,189,240,0.25);padding:4px 12px;border-radius:20px;margin-bottom:1rem}
+h1{font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:0.75rem}
+.article-sub{color:rgba(255,255,255,0.6);font-size:15px;max-width:56ch}
+.cta-top{margin-top:1.75rem}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:13px 26px;border-radius:8px;font-size:14.5px;font-weight:700;border:none;cursor:pointer;font-family:inherit}
+.cta-btn:hover{background:var(--accent-dark)}
+article{padding:2.5rem 0}
+article h2{font-size:19px;font-weight:800;color:var(--navy);margin:2rem 0 0.75rem}
+article h2:first-child{margin-top:0}
+article p{font-size:15px;color:var(--text-mid);margin-bottom:0.9rem}
+article ul{margin:0.5rem 0 1rem 1.25rem}
+article li{font-size:15px;color:var(--text-mid);margin-bottom:0.4rem}
+.distinctie{background:#f1eefc;border-left:3px solid var(--accent);padding:10px 14px;border-radius:6px;font-size:14px;color:#332560;margin:0.75rem 0}
+.faq-item{border-top:1px solid var(--border);padding:1.1rem 0}
+.faq-item h3{font-size:15.5px;font-weight:700;color:var(--navy);margin-bottom:0.4rem}
+.faq-item p{font-size:14.5px;color:var(--text-mid);margin:0}
+.cta-band{background:var(--navy);color:#fff;padding:3rem 1.5rem;text-align:center;margin-top:1rem}
+.cta-band h2{color:#fff;font-size:20px;margin-bottom:0.5rem}
+.cta-band p{color:rgba(255,255,255,0.6);font-size:14.5px;max-width:48ch;margin:0 auto 1.5rem}
+footer{padding:1.5rem;text-align:center;font-size:12.5px;color:var(--text-light)}
+footer a{color:var(--accent-dark)}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(6,13,22,0.7);z-index:1000;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:14px;padding:2rem;width:100%;max-width:440px;position:relative}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;font-size:18px;color:var(--text-light)}
+.modal-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:1rem}
+.form-row{margin-bottom:0.9rem}
+.form-row label{display:block;font-size:12px;font-weight:600;color:var(--text-mid);margin-bottom:5px}
+.form-row input,.form-row textarea{width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:7px;font-size:14px;font-family:inherit}
+.modal-submit{width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.modal-success{display:none;text-align:center}
+</style>
+</head>
+<body>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CFT5SXWQFH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CFT5SXWQFH');
+</script>
+
+<nav>
+  <div class="nav-brand">ghiduri-conformitate<span>.ro</span></div>
+  <a href="/#iso" class="nav-back">&larr; Înapoi la Standarde ISO</a>
+</nav>
+
+<div class="article-head">
+  <div class="wrap">
+    <span class="eyebrow">Standarde ISO &middot; Rezumat gratuit</span>
+    <h1>ISO 27001:2022, Securitatea informației</h1>
+    <p class="article-sub">Structura controalelor din Anexa A, managementul riscurilor de securitate și pregătirea pentru audit de certificare.</p>
+    <div class="cta-top">
+      <button class="cta-btn" onclick="openModal()">Solicită ghidul personalizat &rarr;</button>
+    </div>
+  </div>
+</div>
+
+<article class="wrap">
+  <h2>Ce prevede standardul</h2>
+  <p>ISO 27001:2022 este standardul internațional pentru sistemele de management al securității informației, aplicabil oricărei organizații care gestionează date sensibile, indiferent dacă acestea sunt digitale sau pe suport fizic. Ediția 2022 a înlocuit versiunea din 2013, aducând o structură revizuită a controalelor de securitate.</p>
+
+  <h2>Ce s-a schimbat față de ediția 2013</h2>
+  <div class="distinctie">Numărul de controale din Anexa A a scăzut de la 114 la 93, prin regrupare și consolidare, organizate acum în patru categorii: organizaționale, pentru personal, fizice și tehnologice. Standardul a introdus și controale noi, legate de securitatea cloud, prevenirea scurgerilor de date și monitorizarea activităților de securitate, reflectând amenințările cibernetice actuale, nu doar pe cele existente în 2013.</div>
+
+  <h2>Evaluarea riscurilor, nucleul sistemului</h2>
+  <p>Standardul nu impune implementarea tuturor celor 93 de controale. Organizația își evaluează propriile riscuri și selectează controalele relevante, documentând totul în Declarația de Aplicabilitate (Statement of Applicability), un document obligatoriu care justifică orice control exclus din implementare.</p>
+  <ul>
+    <li>Identificarea activelor informaționale și a valorii lor pentru organizație</li>
+    <li>Evaluarea amenințărilor și vulnerabilităților specifice fiecărui activ</li>
+    <li>Stabilirea nivelului de risc acceptabil și a măsurilor de tratare</li>
+    <li>Monitorizarea continuă și revizuirea periodică a evaluării de risc</li>
+  </ul>
+
+  <h2>Cum se desfășoară auditul de certificare</h2>
+  <p>Similar altor standarde de management, procesul se desfășoară în două etape: o evaluare documentară, urmată de o vizită la fața locului pentru verificarea implementării practice a controalelor selectate. Un interval realist pentru întregul proces, de la evaluarea de risc inițială până la certificare, este de 6 până la 12 luni, în funcție de mărimea și complexitatea organizației.</p>
+
+  <h2>Ce include ghidul nostru</h2>
+  <p>Ghidul personalizat EvoTrainHub pe ISO 27001:2022 îți oferă un model de evaluare a riscurilor adaptat activității tale, un model de Declarație de Aplicabilitate, și un plan de implementare a controalelor prioritare pentru sectorul tău. Actualizăm ghidul la fiecare revizuire a standardului.</p>
+
+  <h2>Întrebări frecvente</h2>
+  <div class="faq-item">
+    <h3>Ce s-a schimbat între ISO 27001:2013 și ediția 2022?</h3>
+    <p>Numărul de controale a scăzut de la 114 la 93, regrupate în patru categorii, cu adăugarea unor controale noi privind securitatea cloud și amenințările cibernetice moderne.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Este obligatorie implementarea tuturor celor 93 de controale?</h3>
+    <p>Nu. Organizația selectează controalele relevante pe baza propriei evaluări de risc, documentată în Declarația de Aplicabilitate.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Cât durează implementarea până la certificare?</h3>
+    <p>Un interval realist este de 6 până la 12 luni, în funcție de mărimea și complexitatea organizației.</p>
+  </div>
+</article>
+
+<div class="cta-band">
+  <h2>Ai nevoie de acest ghid pentru firma ta?</h2>
+  <p>Îl adaptăm pe tipul de date pe care le gestionezi și pe infrastructura ta existentă. Livrare în maximum 5 zile lucrătoare.</p>
+  <button class="cta-btn" onclick="openModal()">Solicită ghidul personalizat &rarr;</button>
+</div>
+
+<footer>
+  <p>ghiduri-conformitate.ro &nbsp;&middot;&nbsp; <a href="/">Toate ghidurile</a> &nbsp;&middot;&nbsp; by EvoTrainHub</p>
+</footer>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+    <div id="modal-form-wrap">
+      <p class="modal-title">Solicită ghidul ISO 27001:2022</p>
+      <form id="modal-form" action="https://formspree.io/f/xnjyypve" method="POST">
+        <input type="hidden" name="ghid_solicitat" value="ISO 27001:2022, Securitatea informației">
+        <div class="form-row"><label>Nume și prenume *</label><input type="text" name="nume" required></div>
+        <div class="form-row"><label>Companie *</label><input type="text" name="companie" required></div>
+        <div class="form-row"><label>Email *</label><input type="email" name="email" required></div>
+        <div class="form-row"><label>Telefon</label><input type="tel" name="telefon"></div>
+        <div class="form-row"><label>Mesaj (opțional)</label><textarea name="mesaj" rows="3"></textarea></div>
+        <button type="submit" class="modal-submit">Trimite solicitarea &rarr;</button>
+      </form>
+    </div>
+    <div class="modal-success" id="modal-success">
+      <h3>Solicitare trimisă!</h3>
+      <p>Vă contactăm în maximum 24 de ore.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(){document.getElementById('modal-overlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';}
+function closeModalOutside(e){if(e.target===document.getElementById('modal-overlay'))closeModal();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+document.getElementById('modal-form').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=this.querySelector('.modal-submit');
+  btn.textContent='Se trimite...';btn.disabled=true;
+  try{
+    const res=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{Accept:'application/json'}});
+    if(res.ok){
+      document.getElementById('modal-form-wrap').style.display='none';
+      document.getElementById('modal-success').style.display='block';
+      setTimeout(closeModal,4000);
+    }else{btn.textContent='Eroare, încearcă din nou';btn.disabled=false;}
+  }catch{btn.textContent='Eroare, încearcă din nou';btn.disabled=false;}
+});
+</script>
+</body>
+</html>

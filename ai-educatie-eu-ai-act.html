@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Utilizarea AI în educație - politici instituționale și EU AI Act 2026 | Ghiduri Conformitate</title>
+<meta name="description" content="Calendarul actualizat al EU AI Act pentru educație, interdicțiile deja active și cum elaborezi o politică instituțională de utilizare a inteligenței artificiale. Actualizat iulie 2026.">
+<link rel="canonical" href="https://ghiduri-conformitate.ro/ai-educatie-eu-ai-act.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Utilizarea AI în educație, politici instituționale și EU AI Act",
+      "description": "Calendarul actualizat al EU AI Act pentru instituțiile de învățământ și cum elaborezi o politică internă de utilizare a inteligenței artificiale.",
+      "author": { "@type": "Organization", "name": "Ghiduri Conformitate" },
+      "publisher": { "@type": "Organization", "name": "EvoTrainHub" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "De când se aplică integral EU AI Act pentru sistemele folosite în educație?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Termenul inițial era 2 august 2026, dar printr-un acord politic din 7 mai 2026, în cadrul pachetului Digital Omnibus, obligațiile complete pentru sistemele cu risc ridicat din Anexa III, inclusiv educația, au fost amânate până la 2 decembrie 2027." }
+        },
+        {
+          "@type": "Question",
+          "name": "Ce obligații privind AI sunt deja active acum, în instituțiile de învățământ?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Din 2 februarie 2025 sunt deja active interzicerea recunoașterii emoțiilor prin AI în instituțiile de învățământ și obligația de alfabetizare AI (art. 4), care impune un nivel suficient de competențe pentru personalul care utilizează sisteme AI." }
+        },
+        {
+          "@type": "Question",
+          "name": "Ce amenzi riscă o instituție de învățământ pentru nerespectarea AI Act?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Pentru practicile interzise, amenzile pot ajunge până la 35 de milioane de euro sau 7% din cifra de afaceri anuală globală. Aceste sancțiuni se pot aplica simultan cu amenzile GDPR, dacă sistemul AI prelucrează și date cu caracter personal." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0c2340;--accent:#2d5fa0;--accent-dark:#204577;--accent-light:#e8eef8;
+  --text:#1a2733;--text-mid:#4a5c6a;--text-light:#7a8f9e;--border:#dde5eb;
+  --bg:#f5f7fa;--white:#fff;--stamp-red:#8a3020;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
+a{color:inherit;text-decoration:none}
+nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.nav-brand{color:#fff;font-size:14px;font-weight:700}
+.nav-brand span{color:#6cb8e8;font-weight:400}
+.nav-back{color:rgba(255,255,255,0.6);font-size:13px;display:flex;align-items:center;gap:5px}
+.nav-back:hover{color:#fff}
+.wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
+.article-head{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#a8c4ea;background:rgba(168,196,234,0.12);border:1px solid rgba(168,196,234,0.25);padding:4px 12px;border-radius:20px;margin-bottom:1rem}
+h1{font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:0.75rem}
+.article-sub{color:rgba(255,255,255,0.6);font-size:15px;max-width:56ch}
+.cta-top{margin-top:1.75rem}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:13px 26px;border-radius:8px;font-size:14.5px;font-weight:700;border:none;cursor:pointer;font-family:inherit}
+.cta-btn:hover{background:var(--accent-dark)}
+article{padding:2.5rem 0}
+article h2{font-size:19px;font-weight:800;color:var(--navy);margin:2rem 0 0.75rem}
+article h2:first-child{margin-top:0}
+article p{font-size:15px;color:var(--text-mid);margin-bottom:0.9rem}
+article ul{margin:0.5rem 0 1rem 1.25rem}
+article li{font-size:15px;color:var(--text-mid);margin-bottom:0.4rem}
+.sanctiune{background:#faeae7;border-left:3px solid var(--stamp-red);padding:10px 14px;border-radius:6px;font-size:14px;color:#5a1f14;margin:0.75rem 0}
+.distinctie{background:#eef3fb;border-left:3px solid var(--accent);padding:10px 14px;border-radius:6px;font-size:14px;color:#173a63;margin:0.75rem 0}
+.actualizare{background:#e3f5e8;border-left:3px solid #1a6b3a;padding:10px 14px;border-radius:6px;font-size:14px;color:#0f3d21;margin:0.75rem 0}
+.faq-item{border-top:1px solid var(--border);padding:1.1rem 0}
+.faq-item h3{font-size:15.5px;font-weight:700;color:var(--navy);margin-bottom:0.4rem}
+.faq-item p{font-size:14.5px;color:var(--text-mid);margin:0}
+.cta-band{background:var(--navy);color:#fff;padding:3rem 1.5rem;text-align:center;margin-top:1rem}
+.cta-band h2{color:#fff;font-size:20px;margin-bottom:0.5rem}
+.cta-band p{color:rgba(255,255,255,0.6);font-size:14.5px;max-width:48ch;margin:0 auto 1.5rem}
+footer{padding:1.5rem;text-align:center;font-size:12.5px;color:var(--text-light)}
+footer a{color:var(--accent-dark)}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(6,13,22,0.7);z-index:1000;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:14px;padding:2rem;width:100%;max-width:440px;position:relative}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;font-size:18px;color:var(--text-light)}
+.modal-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:1rem}
+.form-row{margin-bottom:0.9rem}
+.form-row label{display:block;font-size:12px;font-weight:600;color:var(--text-mid);margin-bottom:5px}
+.form-row input,.form-row textarea{width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:7px;font-size:14px;font-family:inherit}
+.modal-submit{width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.modal-success{display:none;text-align:center}
+</style>
+</head>
+<body>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CFT5SXWQFH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CFT5SXWQFH');
+</script>
+
+<nav>
+  <div class="nav-brand">ghiduri-conformitate<span>.ro</span></div>
+  <a href="/#educatie" class="nav-back">&larr; Înapoi la Educație</a>
+</nav>
+
+<div class="article-head">
+  <div class="wrap">
+    <span class="eyebrow">Educație &amp; Formare Profesională &middot; Rezumat gratuit</span>
+    <h1>Utilizarea AI în educație, politici instituționale și EU AI Act</h1>
+    <p class="article-sub">Ce e deja obligatoriu acum, ce a fost amânat recent și cum elaborezi o politică internă de utilizare a inteligenței artificiale pentru instituția ta.</p>
+    <div class="cta-top">
+      <button class="cta-btn" onclick="openModal()">Solicită ghidul personalizat &rarr;</button>
+    </div>
+  </div>
+</div>
+
+<article class="wrap">
+  <h2>Un calendar care s-a schimbat recent</h2>
+  <div class="actualizare">Termenul pentru aplicarea integrală a EU AI Act la sistemele cu risc ridicat din educație nu mai este 2 august 2026, cum arată majoritatea materialelor publicate anterior anului 2026. Printr-un acord politic ajuns la 7 mai 2026, în cadrul pachetului Digital Omnibus, Parlamentul European și Consiliul au amânat aceste obligații până la 2 decembrie 2027. Dacă ai citit sau ai primit informații despre "termenul august 2026" pentru educație, informația e depășită.</div>
+
+  <h2>Ce e deja în vigoare acum, indiferent de amânare</h2>
+  <p>Amânarea privește doar obligațiile complete pentru sistemele cu risc ridicat. Alte două categorii de obligații sunt deja active, din 2 februarie 2025, și se aplică oricărei instituții de învățământ:</p>
+  <ul>
+    <li><strong>Interzicerea recunoașterii emoțiilor prin AI în instituțiile de învățământ</strong>, o practică expres interzisă de regulament, alături de manipularea comportamentală și scoringul social</li>
+    <li><strong>Obligația de alfabetizare AI (art. 4)</strong>, orice organizație care furnizează, utilizează sau implementează sisteme AI trebuie să asigure personalului un nivel suficient de competențe, cunoștințe și înțelegere pentru o utilizare informată</li>
+  </ul>
+  <p>Regimul general de sancțiuni devine pe deplin aplicabil din 2 august 2026 pentru încălcările din aceste prime etape, chiar dacă termenul pentru risc ridicat s-a mutat.</p>
+
+  <h2>De ce educația rămâne domeniu de risc ridicat</h2>
+  <p>Modificările aduse prin Digital Omnibus nu schimbă clasificarea sistemelor AI din educație. Sistemele folosite pentru evaluarea și notarea automatizată, supravegherea comportamentului elevilor în clasă sau online, selecția candidaților pentru admitere sau burse, și orientarea profesională rămân în categoria sistemelor cu risc ridicat, definită în Anexa III a regulamentului. Doar termenul de conformare deplină s-a mutat spre 2027, nu clasificarea de risc.</p>
+
+  <h2>Ce riști în caz de neconformitate</h2>
+  <div class="sanctiune">Pentru practicile interzise, amenzile pot ajunge până la 35 de milioane de euro sau 7% din cifra de afaceri anuală globală. Aceste sancțiuni se pot aplica simultan cu amenzile GDPR, dacă sistemul AI prelucrează și date cu caracter personal ale elevilor sau studenților, aplicându-se valoarea cea mai mare între cele două regimuri.</div>
+
+  <h2>Ce include ghidul nostru</h2>
+  <p>Ghidul personalizat EvoTrainHub pe utilizarea AI în educație îți oferă un model de politică instituțională, un checklist pentru identificarea sistemelor AI deja folosite în instituția ta (inclusiv instrumente de corectare automată sau proctoring), și un plan de instruire pentru personal, aliniat cu obligația de alfabetizare AI deja activă. Actualizăm ghidul la fiecare modificare a calendarului european.</p>
+
+  <h2>Întrebări frecvente</h2>
+  <div class="faq-item">
+    <h3>De când se aplică integral EU AI Act pentru sistemele folosite în educație?</h3>
+    <p>Termenul inițial era 2 august 2026, dar a fost amânat până la 2 decembrie 2027, printr-un acord politic din 7 mai 2026.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Ce obligații privind AI sunt deja active acum?</h3>
+    <p>Interzicerea recunoașterii emoțiilor prin AI în instituțiile de învățământ și obligația de alfabetizare AI pentru personal, ambele din 2 februarie 2025.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Ce amenzi riscă o instituție pentru nerespectarea AI Act?</h3>
+    <p>Până la 35 milioane euro sau 7% din cifra de afaceri globală pentru practicile interzise, cumulabil cu sancțiunile GDPR dacă sunt implicate date personale.</p>
+  </div>
+</article>
+
+<div class="cta-band">
+  <h2>Ai nevoie de acest ghid pentru instituția ta?</h2>
+  <p>Îl adaptăm pe sistemele AI pe care le folosești deja sau vrei să le introduci. Livrare în maximum 5 zile lucrătoare.</p>
+  <button class="cta-btn" onclick="openModal()">Solicită ghidul personalizat &rarr;</button>
+</div>
+
+<footer>
+  <p>ghiduri-conformitate.ro &nbsp;&middot;&nbsp; <a href="/">Toate ghidurile</a> &nbsp;&middot;&nbsp; by EvoTrainHub</p>
+</footer>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+    <div id="modal-form-wrap">
+      <p class="modal-title">Solicită ghidul AI în educație</p>
+      <form id="modal-form" action="https://formspree.io/f/xnjyypve" method="POST">
+        <input type="hidden" name="ghid_solicitat" value="Utilizarea AI în educație, EU AI Act">
+        <div class="form-row"><label>Nume și prenume *</label><input type="text" name="nume" required></div>
+        <div class="form-row"><label>Instituție *</label><input type="text" name="companie" required></div>
+        <div class="form-row"><label>Email *</label><input type="email" name="email" required></div>
+        <div class="form-row"><label>Telefon</label><input type="tel" name="telefon"></div>
+        <div class="form-row"><label>Mesaj (opțional)</label><textarea name="mesaj" rows="3"></textarea></div>
+        <button type="submit" class="modal-submit">Trimite solicitarea &rarr;</button>
+      </form>
+    </div>
+    <div class="modal-success" id="modal-success">
+      <h3>Solicitare trimisă!</h3>
+      <p>Vă contactăm în maximum 24 de ore.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(){document.getElementById('modal-overlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';}
+function closeModalOutside(e){if(e.target===document.getElementById('modal-overlay'))closeModal();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+document.getElementById('modal-form').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=this.querySelector('.modal-submit');
+  btn.textContent='Se trimite...';btn.disabled=true;
+  try{
+    const res=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{Accept:'application/json'}});
+    if(res.ok){
+      document.getElementById('modal-form-wrap').style.display='none';
+      document.getElementById('modal-success').style.display='block';
+      setTimeout(closeModal,4000);
+    }else{btn.textContent='Eroare, încearcă din nou';btn.disabled=false;}
+  }catch{btn.textContent='Eroare, încearcă din nou';btn.disabled=false;}
+});
+</script>
+</body>
+</html>
