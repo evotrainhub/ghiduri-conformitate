@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GDPR - obligații operaționale pentru companii: registru, DPO, amenzi | Ghiduri Conformitate</title>
+<meta name="description" content="Registrul activităților de prelucrare, când e obligatoriu un DPO, sancțiunile ANSPDCP și cele mai frecvente greșeli ale companiilor românești, actualizat 2026.">
+<link rel="canonical" href="https://ghiduri-conformitate.ro/gdpr-obligatii-operationale.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "GDPR, obligații operaționale pentru companii",
+      "description": "Registrul activităților de prelucrare, obligația de a desemna un DPO și sancțiunile ANSPDCP pentru companiile din România.",
+      "author": { "@type": "Organization", "name": "Ghiduri Conformitate" },
+      "publisher": { "@type": "Organization", "name": "EvoTrainHub" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Orice companie trebuie să țină registrul activităților de prelucrare?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Teoretic există o scutire pentru firmele cu sub 250 de angajați, dar ea se aplică rar în practică: dacă prelucrarea nu e ocazională, dacă implică date sensibile, sau dacă poate afecta drepturile persoanelor vizate, registrul rămâne obligatoriu indiferent de mărimea companiei." }
+        },
+        {
+          "@type": "Question",
+          "name": "Când este obligatorie desemnarea unui responsabil cu protecția datelor (DPO)?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Conform art. 37 GDPR, DPO este obligatoriu când operatorul este autoritate sau instituție publică, când activitatea principală presupune monitorizare sistematică pe scară largă a persoanelor vizate, sau când se prelucrează pe scară largă categorii speciale de date ori date privind condamnări penale." }
+        },
+        {
+          "@type": "Question",
+          "name": "Cât de mari pot fi amenzile GDPR aplicate de ANSPDCP?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Art. 83 GDPR prevede două niveluri: până la 10 milioane euro sau 2% din cifra de afaceri globală pentru neconformități tehnice și organizatorice, și până la 20 milioane euro sau 4% din cifra de afaceri globală pentru încălcarea principiilor fundamentale sau a drepturilor persoanelor vizate, aplicându-se valoarea mai mare." }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0c2340;--accent:#8a3020;--accent-dark:#6e2519;--accent-light:#faeae7;
+  --text:#1a2733;--text-mid:#4a5c6a;--text-light:#7a8f9e;--border:#dde5eb;
+  --bg:#f5f7fa;--white:#fff;--stamp-red:#8a3020;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
+a{color:inherit;text-decoration:none}
+nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.3)}
+.nav-brand{color:#fff;font-size:14px;font-weight:700}
+.nav-brand span{color:#6cb8e8;font-weight:400}
+.nav-back{color:rgba(255,255,255,0.6);font-size:13px;display:flex;align-items:center;gap:5px}
+.nav-back:hover{color:#fff}
+.wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
+.article-head{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
+.eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#f0a693;background:rgba(240,166,147,0.12);border:1px solid rgba(240,166,147,0.25);padding:4px 12px;border-radius:20px;margin-bottom:1rem}
+h1{font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:0.75rem}
+.article-sub{color:rgba(255,255,255,0.6);font-size:15px;max-width:56ch}
+.cta-top{margin-top:1.75rem}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;padding:13px 26px;border-radius:8px;font-size:14.5px;font-weight:700;border:none;cursor:pointer;font-family:inherit}
+.cta-btn:hover{background:var(--accent-dark)}
+article{padding:2.5rem 0}
+article h2{font-size:19px;font-weight:800;color:var(--navy);margin:2rem 0 0.75rem}
+article h2:first-child{margin-top:0}
+article p{font-size:15px;color:var(--text-mid);margin-bottom:0.9rem}
+article ul{margin:0.5rem 0 1rem 1.25rem}
+article li{font-size:15px;color:var(--text-mid);margin-bottom:0.4rem}
+.sanctiune{background:#faeae7;border-left:3px solid var(--stamp-red);padding:10px 14px;border-radius:6px;font-size:14px;color:#5a1f14;margin:0.75rem 0}
+.distinctie{background:#fff8ec;border-left:3px solid #c98a12;padding:10px 14px;border-radius:6px;font-size:14px;color:#5c4108;margin:0.75rem 0}
+.faq-item{border-top:1px solid var(--border);padding:1.1rem 0}
+.faq-item h3{font-size:15.5px;font-weight:700;color:var(--navy);margin-bottom:0.4rem}
+.faq-item p{font-size:14.5px;color:var(--text-mid);margin:0}
+.cta-band{background:var(--navy);color:#fff;padding:3rem 1.5rem;text-align:center;margin-top:1rem}
+.cta-band h2{color:#fff;font-size:20px;margin-bottom:0.5rem}
+.cta-band p{color:rgba(255,255,255,0.6);font-size:14.5px;max-width:48ch;margin:0 auto 1.5rem}
+footer{padding:1.5rem;text-align:center;font-size:12.5px;color:var(--text-light)}
+footer a{color:var(--accent-dark)}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(6,13,22,0.7);z-index:1000;align-items:center;justify-content:center;padding:1rem}
+.modal-overlay.open{display:flex}
+.modal{background:#fff;border-radius:14px;padding:2rem;width:100%;max-width:440px;position:relative}
+.modal-close{position:absolute;top:1rem;right:1rem;background:none;border:none;cursor:pointer;font-size:18px;color:var(--text-light)}
+.modal-title{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:1rem}
+.form-row{margin-bottom:0.9rem}
+.form-row label{display:block;font-size:12px;font-weight:600;color:var(--text-mid);margin-bottom:5px}
+.form-row input,.form-row textarea{width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:7px;font-size:14px;font-family:inherit}
+.modal-submit{width:100%;padding:12px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.modal-success{display:none;text-align:center}
+</style>
+</head>
+<body>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CFT5SXWQFH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-CFT5SXWQFH');
+</script>
+
+<nav>
+  <div class="nav-brand">ghiduri-conformitate<span>.ro</span></div>
+  <a href="/#gdpr" class="nav-back">&larr; Înapoi la GDPR</a>
+</nav>
+
+<div class="article-head">
+  <div class="wrap">
+    <span class="eyebrow">GDPR &amp; Date Personale &middot; Rezumat gratuit</span>
+    <h1>GDPR, obligații operaționale pentru companii</h1>
+    <p class="article-sub">Registrul activităților de prelucrare, când e obligatoriu un responsabil cu protecția datelor și sancțiunile pe care ANSPDCP le aplică deja în România.</p>
+    <div class="cta-top">
+      <button class="cta-btn" onclick="openModal()">Solicită ghidul personalizat &rarr;</button>
+    </div>
+  </div>
+</div>
+
+<article class="wrap">
+  <h2>Ce prevede regulamentul</h2>
+  <p>Regulamentul General privind Protecția Datelor se aplică oricărei organizații care prelucrează date cu caracter personal ale unor cetățeni din Uniunea Europeană, indiferent de mărimea companiei sau de sectorul de activitate. Conformitatea nu e un proiect cu termen fix, ci un proces continuu: registrul de prelucrări se actualizează, politicile se revizuiesc, angajații se instruiesc periodic.</p>
+  <p>Un mit frecvent la firmele mici: "sub 250 de angajați nu trebuie să țin registrul". Scutirea există teoretic la art. 30 alin. (5) GDPR, dar se aplică rar în practică. Dacă prelucrarea nu e ocazională, dacă implică date sensibile, sau dacă poate afecta drepturile persoanelor vizate, registrul rămâne obligatoriu indiferent de numărul de angajați.</p>
+
+  <h2>Obligațiile operaționale principale</h2>
+  <ul>
+    <li>Registrul activităților de prelucrare (art. 30): scop, temei legal, categorii de date și persoane vizate, destinatari, termen de păstrare, măsuri de securitate</li>
+    <li>Informarea persoanelor vizate înainte sau în momentul colectării datelor: cine ești, de ce colectezi datele, cu cine le partajezi, ce drepturi are persoana</li>
+    <li>Acorduri de prelucrare (DPA) semnate cu toți furnizorii care procesează date în numele tău: contabil extern, hosting, platformă de facturare, email marketing</li>
+    <li>Evaluarea de impact (DPIA) pentru prelucrări cu risc ridicat: monitorizare video pe scară largă, profilare automatizată, date de sănătate sau biometrice</li>
+    <li>Instruirea angajaților, în special din HR, marketing și IT, la angajare și anual</li>
+  </ul>
+
+  <h2>Când e obligatoriu un DPO</h2>
+  <div class="distinctie">Conform art. 37 GDPR, desemnarea unui responsabil cu protecția datelor este obligatorie în trei situații: operatorul e autoritate sau instituție publică, activitatea principală presupune monitorizare sistematică pe scară largă a persoanelor vizate, sau se prelucrează pe scară largă categorii speciale de date ori date despre condamnări penale. Intră aici, de regulă: spitale, clinici mari, școli cu sisteme de supraveghere, bănci, companii de telecomunicații, firme de marketing direct.</div>
+
+  <h2>Ce riști în caz de neconformitate</h2>
+  <div class="sanctiune">Art. 83 GDPR stabilește două niveluri de amenzi: până la 10 milioane euro sau 2% din cifra de afaceri globală pentru neconformități tehnice și organizatorice, și până la 20 milioane euro sau 4% din cifra de afaceri globală pentru încălcarea principiilor fundamentale sau a drepturilor persoanelor vizate, aplicându-se valoarea mai mare dintre cele două.</div>
+  <p>ANSPDCP aplică deja sancțiuni concrete în România, nu doar teoretic. Un exemplu recent: operatorul Altex România a fost sancționat cu patru amenzi contravenționale, în cuantum total de 40.768 lei, pentru nerespectarea obligației de cooperare cu autoritatea de supraveghere în cursul unei investigații.</p>
+
+  <h2>Ce include ghidul nostru</h2>
+  <p>Ghidul personalizat EvoTrainHub pe obligațiile GDPR îți oferă un model de registru al prelucrărilor adaptat activității tale, un checklist pentru a determina dacă ai nevoie de DPO, și un plan de instruire pentru echipă. Actualizăm ghidul la fiecare schimbare de practică a ANSPDCP.</p>
+
+  <h2>Întrebări frecvente</h2>
+  <div class="faq-item">
+    <h3>Orice companie trebuie să țină registrul activităților de prelucrare?</h3>
+    <p>Teoretic există o scutire pentru firmele cu sub 250 de angajați, dar se aplică rar în practică. Dacă prelucrarea nu e ocazională sau implică date sensibile, registrul rămâne obligatoriu.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Când este obligatorie desemnarea unui DPO?</h3>
+    <p>Când operatorul e autoritate publică, când activitatea principală presupune monitorizare sistematică pe scară largă, sau când se prelucrează pe scară largă date sensibile ori legate de condamnări penale.</p>
+  </div>
+  <div class="faq-item">
+    <h3>Cât de mari pot fi amenzile GDPR aplicate de ANSPDCP?</h3>
+    <p>Până la 10 milioane euro sau 2% din cifra de afaceri pentru neconformități tehnice, și până la 20 milioane euro sau 4% pentru încălcarea drepturilor persoanelor vizate, aplicându-se valoarea mai mare.</p>
+  </div>
+</article>
+
+<div class="cta-band">
+  <h2>Ai nevoie de acest ghid pentru compania ta?</h2>
+  <p>Îl adaptăm pe volumul și tipul de date pe care le prelucrezi. Livrare în maximum 5 zile lucrătoare.</p>
+  <button class="cta-btn" onclick="openModal()">Solicită ghidul personalizat &rarr;</button>
+</div>
+
+<footer>
+  <p>ghiduri-conformitate.ro &nbsp;&middot;&nbsp; <a href="/">Toate ghidurile</a> &nbsp;&middot;&nbsp; by EvoTrainHub</p>
+</footer>
+
+<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+    <div id="modal-form-wrap">
+      <p class="modal-title">Solicită ghidul GDPR, obligații operaționale</p>
+      <form id="modal-form" action="https://formspree.io/f/xnjyypve" method="POST">
+        <input type="hidden" name="ghid_solicitat" value="GDPR, obligații operaționale pentru companii">
+        <div class="form-row"><label>Nume și prenume *</label><input type="text" name="nume" required></div>
+        <div class="form-row"><label>Companie *</label><input type="text" name="companie" required></div>
+        <div class="form-row"><label>Email *</label><input type="email" name="email" required></div>
+        <div class="form-row"><label>Telefon</label><input type="tel" name="telefon"></div>
+        <div class="form-row"><label>Mesaj (opțional)</label><textarea name="mesaj" rows="3"></textarea></div>
+        <button type="submit" class="modal-submit">Trimite solicitarea &rarr;</button>
+      </form>
+    </div>
+    <div class="modal-success" id="modal-success">
+      <h3>Solicitare trimisă!</h3>
+      <p>Vă contactăm în maximum 24 de ore.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(){document.getElementById('modal-overlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeModal(){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';}
+function closeModalOutside(e){if(e.target===document.getElementById('modal-overlay'))closeModal();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+document.getElementById('modal-form').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const btn=this.querySelector('.modal-submit');
+  btn.textContent='Se trimite...';btn.disabled=true;
+  try{
+    const res=await fetch(this.action,{method:'POST',body:new FormData(this),headers:{Accept:'application/json'}});
+    if(res.ok){
+      document.getElementById('modal-form-wrap').style.display='none';
+      document.getElementById('modal-success').style.display='block';
+      setTimeout(closeModal,4000);
+    }else{btn.textContent='Eroare, încearcă din nou';btn.disabled=false;}
+  }catch{btn.textContent='Eroare, încearcă din nou';btn.disabled=false;}
+});
+</script>
+</body>
+</html>
