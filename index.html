@@ -368,7 +368,8 @@
       {id:'ghid-gdpr-op',        title:'GDPR — obligații operaționale',           cat:'Politici și proceduri',     page:'gdpr-obligatii-operationale.html',            free:'Prezentare gratuită', price:149, paymentLink:''},
       {id:'ghid-gdpr-munca',     title:'GDPR în relația de muncă',                cat:'Politici și proceduri',     page:'gdpr-angajator-angajat.html',                 free:'Prezentare gratuită', price:149, paymentLink:''},
       {id:'ghid-ai-educatie',    title:'AI în educație și EU AI Act',             cat:'Instruire și implementare', page:'ai-educatie-eu-ai-act.html',                  free:'Prezentare gratuită', price:149, paymentLink:''},
-      {id:'ghid-gdpr-medical',   title:'Asistent AI — GDPR medical',              cat:'Instruire și implementare', page:'gdpr-medical-ai.html',                        free:'Prezentare gratuită', price:149, paymentLink:''}
+      {id:'demo-ai-gdpr-medical',title:'Asistent AI — GDPR medical',              cat:'Asistenți AI',              page:'gdpr-medical-ai.html',                        free:'Demo gratuit',        price:null, paymentLink:''},
+      {id:'demo-ai-legea-50',    title:'Asistent AI — Legea 50',                  cat:'Asistenți AI',              page:'legea-50-ai.html',                            free:'Demo gratuit',        price:null, paymentLink:''}
     ];
 
     /* Recomandările selectorului: id-uri de produse REALE, nu categorii. */
@@ -379,7 +380,7 @@
         autorizare:['ghid-aracip','ghid-dsp','ghid-legea-50'],
         proceduri:['ghid-gdpr-op','ghid-disciplinare','ghid-cod-adm'],
         documente:['ghid-gdpr-op','ghid-iso-9001','ghid-disciplinare'],
-        instruire:['ghid-ai-educatie','ghid-gdpr-medical','ghid-ssm']
+        instruire:['ghid-ai-educatie','demo-ai-gdpr-medical','ghid-ssm']
       },
       byOrg:{
         companie:'ghid-iso-9001', educatie:'ghid-aracip', public:'ghid-achizitii',
@@ -404,8 +405,8 @@
           <h3>${p.title}</h3>
           <p class="resource-category">${p.cat}</p>
           <div class="resource-cta">
-            ${p.price?`<span class="resource-price">${priceLabel(p)}</span><button class="btn btn-primary buy-btn" type="button" data-product="${p.id}">Cumpără</button>`:''}
-            <a class="resource-free-link" href="${p.page}">${p.free==='Test gratuit'?'Începe testul':(p.price?'Vezi prezentarea':'Citește ghidul gratuit')} →</a>
+            ${p.price?`<span class="resource-price">${priceLabel(p)}</span><button class="btn btn-primary buy-btn" type="button" data-product="${p.id}">Cumpără</button>`:(p.cat==='Asistenți AI'?`<a class="btn btn-secondary request-link" data-request="Doresc o soluție personalizată" href="#contact">Vreau unul pentru organizația mea</a>`:'')}
+            <a class="resource-free-link" href="${p.page}">${p.free==='Test gratuit'?'Începe testul':(p.price?'Vezi prezentarea':(p.cat==='Asistenți AI'?'Încearcă asistentul':'Citește ghidul gratuit'))} →</a>
           </div>
         </article>`).join('');
       bindBuyButtons();
@@ -437,10 +438,10 @@
       const ids=[RECS.byOrg[org],...RECS.byNeed[need]].filter((v,i,a)=>a.indexOf(v)===i).slice(0,3);
       document.getElementById('recommendations').innerHTML=ids.map(id=>{const p=byId(id);return `
         <div class="recommendation">
-          <div><b>${p.title}</b><span class="rec-cat">${p.cat} · ${priceLabel(p)}</span></div>
+          <div><b>${p.title}</b><span class="rec-cat">${p.cat}${p.price?' · '+priceLabel(p):' · gratuit'}</span></div>
           <div class="rec-actions">
             <a class="btn btn-secondary" href="${p.page}">Vezi gratuit</a>
-            <button class="btn btn-primary buy-btn" type="button" data-product="${p.id}">Cumpără</button>
+            ${p.price?`<button class="btn btn-primary buy-btn" type="button" data-product="${p.id}">Cumpără</button>`:''}
           </div>
         </div>`}).join('');
       bindBuyButtons();
