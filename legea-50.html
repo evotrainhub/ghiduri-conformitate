@@ -1096,13 +1096,18 @@
         }
     });
 
+    // Comută imediat pe tab-ul de kit dacă URL-ul are ancora #kit — rulează la DOMContentLoaded,
+    // nu la window.onload, ca să nu aștepte încărcarea completă a resurselor externe (FontAwesome, Tailwind)
+    document.addEventListener('DOMContentLoaded', function() {
+        if (window.location.hash === '#kit') {
+            switchTab('kit');
+        }
+    });
+
     // Initialize initial state on load
     window.onload = function() {
         calculateProjectDetails();
         updateDtacChecklist();
-        if (window.location.hash === '#kit') {
-            switchTab('kit');
-        }
     };
 </script>
 
