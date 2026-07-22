@@ -370,6 +370,7 @@
       {id:'ghid-iso-27001',      title:'ISO 27001 — securitatea informației',     cat:'Audit și certificare',      page:'iso-27001-securitatea-informatiei.html',      free:'Prezentare gratuită', price:149, paymentLink:''},
       {id:'kit-iso-27001', title:'KIT: ISO 27001 — securitatea informației', cat:'Audit și certificare', page:'iso-27001-securitatea-informatiei.html', free:'Prezentare gratuită', price:490, paymentLink:''},
       {id:'ghid-legea-50',       title:'Legea 50 — autorizarea construcțiilor',   cat:'Autorizare și acreditare',  page:'legea-50.html',                               free:'Ghid gratuit — exemplu', price:null, paymentLink:''},
+      {id:'kit-legea-50',        title:'KIT: Legea 50 — autorizarea construcțiilor', cat:'Autorizare și acreditare', page:'legea-50.html',                            free:'Ghid gratuit — exemplu', price:490, paymentLink:''},
       {id:'ghid-aracip',         title:'Evaluare și autorizare ARACIP',           cat:'Autorizare și acreditare',  page:'aracip.html',                                 free:'Prezentare gratuită', price:149, paymentLink:''},
       {id:'kit-aracip', title:'KIT: Evaluare și autorizare ARACIP', cat:'Autorizare și acreditare', page:'aracip.html', free:'Prezentare gratuită', price:490, paymentLink:''},
       {id:'ghid-unitati-private',title:'Autorizare unități private de învățământ',cat:'Autorizare și acreditare',  page:'autorizare-unitati-private-invatamant.html',  free:'Prezentare gratuită', price:149, paymentLink:''},
@@ -446,12 +447,13 @@
           return `<button class="${cls}" type="button" data-product="${p.id}">${label}</button>`;
         }).join('');
       const aiRequest = base.cat==='Asistenți AI' ? `<a class="btn btn-secondary request-link" data-request="Doresc o soluție personalizată" href="#contact">Vreau unul pentru organizația mea</a>` : '';
-      const freeLinkText = base.free==='Test gratuit' ? 'Începe testul' : (isFree ? (base.cat==='Asistenți AI'?'Încearcă asistentul':'Citește ghidul gratuit') : 'Vezi prezentarea');
+      const hasKitSample = isFree && kit;
+      const freeLinkText = base.free==='Test gratuit' ? 'Începe testul' : (isFree ? (hasKitSample ? 'Citește ghidul și vezi mostra kitului, gratuit' : (base.cat==='Asistenți AI'?'Încearcă asistentul':'Citește ghidul gratuit')) : 'Vezi prezentarea');
       return `
         <article class="resource-card${isFree?' is-free':''}">
           <span class="status${isFree?' status-free':''}">${base.free}</span>
           <h3>${base.title}</h3>
-          <p class="resource-category">${base.cat}</p>
+          <p class="resource-category">${base.cat}${hasKitSample?' · <b class="free-tag">include mostră gratuită a kitului</b>':''}</p>
           <div class="resource-cta resource-cta-stack">
             ${buttons}${aiRequest}
             <a class="resource-free-link" href="${base.page}">${freeLinkText} →</a>
