@@ -43,9 +43,9 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#0c2340;--accent:#8a3020;--accent-dark:#6e2519;--accent-light:#faeae7;
+  --navy:#202e44;--accent:#9e2b3a;--accent-dark:#831f2d;--accent-light:#f7e9ea;
   --text:#1a2733;--text-mid:#4a5c6a;--text-light:#7a8f9e;--border:#dde5eb;
-  --bg:#f5f7fa;--white:#fff;--stamp-red:#8a3020;
+  --bg:#f7f8fa;--white:#fff;--stamp-red:#9e2b3a;
 }
 html{scroll-behavior:smooth}
 body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
@@ -57,7 +57,7 @@ nav{background:var(--navy);padding:0 2rem;display:flex;align-items:center;justif
 .nav-back:hover{color:#fff}
 .wrap{max-width:760px;margin:0 auto;padding:0 1.5rem}
 .article-head{background:var(--navy);color:#fff;padding:3rem 0 2.5rem}
-.eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#f0a693;background:rgba(240,166,147,0.12);border:1px solid rgba(240,166,147,0.25);padding:4px 12px;border-radius:20px;margin-bottom:1rem}
+.eyebrow{display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#a8c3e8;background:rgba(61,90,128,0.15);border:1px solid rgba(61,90,128,0.3);padding:4px 12px;border-radius:20px;margin-bottom:1rem}
 h1{font-size:clamp(24px,4vw,34px);font-weight:800;letter-spacing:-0.02em;line-height:1.15;margin-bottom:0.75rem}
 .article-sub{color:rgba(255,255,255,0.6);font-size:15px;max-width:56ch}
 .cta-top{margin-top:1.75rem}
@@ -70,7 +70,7 @@ article p{font-size:15px;color:var(--text-mid);margin-bottom:0.9rem}
 article ul{margin:0.5rem 0 1rem 1.25rem}
 article li{font-size:15px;color:var(--text-mid);margin-bottom:0.4rem}
 .sanctiune{background:#faeae7;border-left:3px solid var(--stamp-red);padding:10px 14px;border-radius:6px;font-size:14px;color:#5a1f14;margin:0.75rem 0}
-.distinctie{background:#fff8ec;border-left:3px solid #c98a12;padding:10px 14px;border-radius:6px;font-size:14px;color:#5c4108;margin:0.75rem 0}
+.distinctie{background:#eef2f8;border-left:3px solid #3d5a80;padding:10px 14px;border-radius:6px;font-size:14px;color:#1f2f44;margin:0.75rem 0}
 .faq-item{border-top:1px solid var(--border);padding:1.1rem 0}
 .faq-item h3{font-size:15.5px;font-weight:700;color:var(--navy);margin-bottom:0.4rem}
 .faq-item p{font-size:14.5px;color:var(--text-mid);margin:0}
@@ -93,27 +93,29 @@ footer a{color:var(--accent-dark)}
 </head>
 <body>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CFT5SXWQFH"></script>
+<!-- Google Analytics se incarca doar daca vizitatorul a acceptat deja cookie-urile pe site (vezi bannerul din index.html) -->
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CFT5SXWQFH');
+(function(){
+  if(localStorage.getItem('cookie-consent')==='accepted'){
+    var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-CFT5SXWQFH';document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}window.gtag=gtag;gtag('js',new Date());gtag('config','G-CFT5SXWQFH',{anonymize_ip:true});
+  }
+})();
 </script>
 
 <nav>
   <div class="nav-brand">ghiduri-conformitate<span>.ro</span></div>
-  <a href="/#gdpr" class="nav-back">&larr; Înapoi la GDPR</a>
+  <a href="/#ghiduri" class="nav-back">&larr; Inapoi la Ghiduri si kituri</a>
 </nav>
 
 <div class="article-head">
   <div class="wrap">
-    <span class="eyebrow">GDPR &amp; Date Personale &middot; Rezumat gratuit</span>
+    <span class="eyebrow">Prezentare gratuita &middot; Ghidul complet: 149 lei</span>
     <h1>GDPR, obligații operaționale pentru companii</h1>
     <p class="article-sub">Registrul activităților de prelucrare, când e obligatoriu un responsabil cu protecția datelor și sancțiunile pe care ANSPDCP le aplică deja în România.</p>
-    <div class="cta-top">
-      <button class="cta-btn" onclick="openModal()">Solicită ghidul personalizat &rarr;</button>
+    <div class="cta-top" style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="cta-btn" onclick="openModal('GDPR, obligații operaționale pentru companii — 149 lei')">Comandă ghidul — 149 lei &rarr;</button>
+      <button class="cta-btn" style="background:transparent;border:1.5px solid rgba(255,255,255,.5)" onclick="openModal('KIT: GDPR, obligații operaționale pentru companii — 490 lei')">Comandă kitul complet — 490 lei</button>
     </div>
   </div>
 </div>
@@ -158,9 +160,13 @@ footer a{color:var(--accent-dark)}
 </article>
 
 <div class="cta-band">
-  <h2>Ai nevoie de acest ghid pentru compania ta?</h2>
-  <p>Îl adaptăm pe volumul și tipul de date pe care le prelucrezi. Livrare în maximum 5 zile lucrătoare.</p>
-  <button class="cta-btn" onclick="openModal()">Solicită ghidul personalizat &rarr;</button>
+  <h2>Vrei ghidul complet, cu checklist și pași de pregătire?</h2>
+  <p>Preț fix. Primești proforma pe email, iar după confirmarea plății, ghidul interactiv (și, la kit, fișierele editabile) — de regulă în aceeași zi lucrătoare.</p>
+  <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+    <button class="cta-btn" onclick="openModal('GDPR, obligații operaționale pentru companii — 149 lei')">Comandă ghidul — 149 lei &rarr;</button>
+    <button class="cta-btn" style="background:transparent;border:1.5px solid rgba(255,255,255,.5)" onclick="openModal('KIT: GDPR, obligații operaționale pentru companii — 490 lei')">Comandă kitul complet — 490 lei</button>
+  </div>
+  <p style="margin-top:14px;font-size:12.5px"><a href="/termeni-si-conditii.html" style="color:#c9d6e8">Termeni și condiții</a> &middot; <a href="/politica-de-confidentialitate.html" style="color:#c9d6e8">Politica de confidențialitate</a></p>
 </div>
 
 <footer>
@@ -171,26 +177,32 @@ footer a{color:var(--accent-dark)}
   <div class="modal">
     <button class="modal-close" onclick="closeModal()">&#x2715;</button>
     <div id="modal-form-wrap">
-      <p class="modal-title">Solicită ghidul GDPR, obligații operaționale</p>
+      <p class="modal-title" id="modal-title">Comanda</p>
       <form id="modal-form" action="https://formspree.io/f/xnjyypve" method="POST">
-        <input type="hidden" name="ghid_solicitat" value="GDPR, obligații operaționale pentru companii">
+        <input type="hidden" name="ghid_solicitat" id="modal-product" value="">
         <div class="form-row"><label>Nume și prenume *</label><input type="text" name="nume" required></div>
         <div class="form-row"><label>Companie *</label><input type="text" name="companie" required></div>
         <div class="form-row"><label>Email *</label><input type="email" name="email" required></div>
         <div class="form-row"><label>Telefon</label><input type="tel" name="telefon"></div>
         <div class="form-row"><label>Mesaj (opțional)</label><textarea name="mesaj" rows="3"></textarea></div>
-        <button type="submit" class="modal-submit">Trimite solicitarea &rarr;</button>
+                <label style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--text-mid);margin-bottom:10px"><input type="checkbox" name="acord_gdpr" required style="margin-top:3px"> Sunt de acord cu prelucrarea datelor conform <a href="/politica-de-confidentialitate.html" style="color:var(--accent-dark)">Politicii de confidențialitate</a>. *</label>
+        <label style="display:flex;gap:8px;align-items:flex-start;font-size:12px;color:var(--text-mid);margin-bottom:14px"><input type="checkbox" name="acord_livrare_digitala" required style="margin-top:3px"> Solicit livrarea conținutului digital după confirmarea plății și înțeleg că îmi pierd dreptul de retragere, conform art. 16 lit. m din OUG 34/2014. *</label>
+<button type="submit" class="modal-submit">Trimite solicitarea &rarr;</button>
       </form>
     </div>
     <div class="modal-success" id="modal-success">
       <h3>Solicitare trimisă!</h3>
-      <p>Vă contactăm în maximum 24 de ore.</p>
+      <p>Primesti factura proforma pe email in maximum o zi lucratoare. Dupa confirmarea platii, iti trimitem materialele si factura fiscala.</p>
     </div>
   </div>
 </div>
 
 <script>
-function openModal(){document.getElementById('modal-overlay').classList.add('open');document.body.style.overflow='hidden';}
+function openModal(product){
+  document.getElementById('modal-title').textContent='Comanda: '+product;
+  document.getElementById('modal-product').value=product;
+  document.getElementById('modal-overlay').classList.add('open');document.body.style.overflow='hidden';
+}
 function closeModal(){document.getElementById('modal-overlay').classList.remove('open');document.body.style.overflow='';}
 function closeModalOutside(e){if(e.target===document.getElementById('modal-overlay'))closeModal();}
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
