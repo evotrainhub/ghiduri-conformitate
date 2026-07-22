@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="ro" class="scroll-smooth">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CFT5SXWQFH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-CFT5SXWQFH');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ghid Interactiv Legea 50/1991 (Actualizată 2026)</title>
@@ -114,6 +105,13 @@
                 <button onclick="switchTab('sanctiuni')" id="btn-sanctiuni" class="tab-btn w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-200 text-slate-600 hover:bg-slate-50 hover:text-slate-900">
                     <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
                     <span>Sancțiuni & Amenzi</span>
+                </button>
+
+                <div class="pt-2 mt-2 border-t border-slate-100"></div>
+
+                <button onclick="switchTab('kit-exemplu')" id="btn-kit-exemplu" class="tab-btn w-full flex items-center space-x-3 px-4 py-3.5 rounded-xl text-sm font-medium transition-all duration-200 text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-100">
+                    <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    <span>Exemplu Kit Complet</span>
                 </button>
 
                 <div class="pt-4 border-t border-slate-100 mt-4 text-center">
@@ -498,7 +496,133 @@
                 </div>
             </section>
 
+            <!-- SECȚIUNEA NOUĂ: EXEMPLU KIT COMPLET -->
+            <section id="tab-kit-exemplu" class="tab-content hidden">
+                <div class="max-w-3xl mx-auto">
+                    <div class="flex items-start space-x-3.5 p-5 bg-amber-50 border border-amber-200 rounded-2xl mb-8">
+                        <div class="p-1.5 bg-amber-600 text-white rounded-lg flex-shrink-0">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-sm font-bold text-amber-950">Acesta e un exemplu parțial, nu kitul complet</h4>
+                            <p class="text-xs text-amber-800 mt-1">Ghidul de mai sus, cu toate secțiunile lui, este integral gratuit. Ce vezi în continuare este o mostră din <strong>KIT-ul de implementare Legea 50/1991 (490 lei)</strong> — câteva puncte reale din fiecare instrument, ca să vezi formatul înainte să cumperi. Restul punctelor sunt marcate „disponibil în kit”.</p>
+                        </div>
+                    </div>
+
+                    <h2 class="text-2xl font-bold text-slate-900 mb-2">Ce conține kitul, pe lângă ghid</h2>
+                    <p class="text-slate-500 mb-8">Trei instrumente de lucru, gândite pentru aplicare directă, nu doar pentru citit.</p>
+
+                    <!-- Checklist partial -->
+                    <div class="bg-white rounded-xl border border-slate-200 p-5 mb-6">
+                        <h3 class="text-sm font-bold text-slate-900 mb-1">1. Checklist detaliat de pregătire a dosarului</h3>
+                        <p class="text-xs text-slate-500 mb-4">Mostră: 6 din cele 34 de puncte incluse în kit.</p>
+                        <ul class="space-y-2 text-xs text-slate-700">
+                            <li class="flex items-start space-x-2"><span class="text-emerald-600 font-bold mt-0.5">✓</span><span>Certificat de urbanism obținut și valabil la data depunerii D.T.</span></li>
+                            <li class="flex items-start space-x-2"><span class="text-emerald-600 font-bold mt-0.5">✓</span><span>Verificat dacă imobilul e monument istoric sau în zonă protejată (Art. 11 alin. 2)</span></li>
+                            <li class="flex items-start space-x-2"><span class="text-emerald-600 font-bold mt-0.5">✓</span><span>Notificare depusă la Direcția Județeană de Cultură, dacă e cazul, cu confirmare de primire</span></li>
+                            <li class="flex items-start space-x-2"><span class="text-emerald-600 font-bold mt-0.5">✓</span><span>Studiu geotehnic anexat, semnat de specialist atestat</span></li>
+                            <li class="flex items-start space-x-2"><span class="text-emerald-600 font-bold mt-0.5">✓</span><span>Referate de verificare de la verificatori atestați, pe toate specialitățile cerute în C.U.</span></li>
+                            <li class="flex items-start space-x-2"><span class="text-emerald-600 font-bold mt-0.5">✓</span><span>Plan de situație vizat OCPI, în sistem Stereo 70, mai vechi de 6 luni verificat</span></li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-dashed border-slate-200 space-y-2">
+                            <div class="flex items-center space-x-2 text-xs text-slate-400"><span class="w-3.5 h-3.5 rounded border border-slate-300 flex-shrink-0"></span><span class="blur-[3px] select-none">Verificare aviz utilități — apă/canal, energie electrică, gaz</span></div>
+                            <div class="flex items-center space-x-2 text-xs text-slate-400"><span class="w-3.5 h-3.5 rounded border border-slate-300 flex-shrink-0"></span><span class="blur-[3px] select-none">Confirmare termen de avizare tacită pentru fiecare aviz solicitat</span></div>
+                            <div class="flex items-center space-x-2 text-xs text-slate-400"><span class="w-3.5 h-3.5 rounded border border-slate-300 flex-shrink-0"></span><span class="blur-[3px] select-none">... încă 26 de puncte, organizate pe cele 7 etape ale procedurii</span></div>
+                            <p class="text-[11px] font-semibold text-amber-700 pt-1">🔒 Disponibil integral în kitul complet</p>
+                        </div>
+                    </div>
+
+                    <!-- Model editabil partial -->
+                    <div class="bg-white rounded-xl border border-slate-200 p-5 mb-6">
+                        <h3 class="text-sm font-bold text-slate-900 mb-1">2. Model editabil: Notificare lucrări scutite (Art. 11 alin. 4)</h3>
+                        <p class="text-xs text-slate-500 mb-4">Mostră: structura documentului. Kitul include fișierul editabil complet, în format Word.</p>
+                        <div class="bg-slate-50 rounded-lg border border-slate-200 p-4 font-mono text-[11px] text-slate-600 leading-relaxed">
+                            <p><strong>Către:</strong> [Primăria / Direcția Județeană de Cultură a ..............]</p>
+                            <p><strong>De la:</strong> [Nume proprietar / reprezentant legal]</p>
+                            <p class="mt-2"><strong>Obiect:</strong> Notificare privind executarea de lucrări scutite de autorizație de construire, conform Art. 11 din Legea 50/1991</p>
+                            <p class="mt-2 blur-[3px] select-none">Subsemnatul/a [...........], în calitate de [...........], vă notific intenția de a executa următoarele lucrări la imobilul situat în [...........], lucrări ce se încadrează în categoria celor scutite de autorizație conform Art. 11 alin. (1), constând în [...........]...</p>
+                            <p class="mt-3 text-amber-700 font-semibold not-italic">🔒 Textul integral, editabil, e disponibil în kit</p>
+                        </div>
+                    </div>
+
+                    <!-- Plan de actiune partial -->
+                    <div class="bg-white rounded-xl border border-slate-200 p-5 mb-8">
+                        <h3 class="text-sm font-bold text-slate-900 mb-1">3. Plan de acțiune pe etape, cu termene și responsabili</h3>
+                        <p class="text-xs text-slate-500 mb-4">Mostră: primele 3 din cele 7 etape ale procedurii.</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-xs text-left">
+                                <thead>
+                                    <tr class="text-slate-400 uppercase text-[10px] border-b border-slate-200">
+                                        <th class="py-2 pr-3">Etapă</th>
+                                        <th class="py-2 pr-3">Termen orientativ</th>
+                                        <th class="py-2">Responsabil</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-slate-700">
+                                    <tr class="border-b border-slate-100">
+                                        <td class="py-2 pr-3">1. Certificat de urbanism</td>
+                                        <td class="py-2 pr-3">Conform C.U. solicitat</td>
+                                        <td class="py-2">Beneficiar / arhitect</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-100">
+                                        <td class="py-2 pr-3">2. Studii de teren / expertize</td>
+                                        <td class="py-2 pr-3">Înainte de depunerea D.T.</td>
+                                        <td class="py-2">Proiectant / specialiști atestați</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-100">
+                                        <td class="py-2 pr-3">3. Notificare monumente / zone protejate, dacă e cazul</td>
+                                        <td class="py-2 pr-3">Înainte de depunerea D.T.</td>
+                                        <td class="py-2">Beneficiar</td>
+                                    </tr>
+                                    <tr class="border-b border-slate-100 text-slate-400">
+                                        <td class="py-2 pr-3 blur-[3px] select-none">4. Avize și acorduri (avizare tacită 15 zile)</td>
+                                        <td class="py-2 pr-3 blur-[3px] select-none">15 zile / aviz</td>
+                                        <td class="py-2 blur-[3px] select-none">Proiectant</td>
+                                    </tr>
+                                    <tr class="text-slate-400">
+                                        <td class="py-2 pr-3 blur-[3px] select-none">5–7. Proiect D.T., depunere, eliberare A.C.</td>
+                                        <td class="py-2 pr-3 blur-[3px] select-none">Variabil</td>
+                                        <td class="py-2 blur-[3px] select-none">Autoritate emitentă</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="text-[11px] font-semibold text-amber-700 pt-3">🔒 Etapele 4-7, cu termene exacte și puncte de control, disponibile în kit</p>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-brand-900 to-slate-900 rounded-2xl p-6 md:p-8 text-center">
+                        <h3 class="text-white font-bold text-lg mb-2">Vrei kitul complet, cu toate cele 34 de puncte, modelele editabile și planul integral?</h3>
+                        <p class="text-slate-300 text-sm mb-5 max-w-xl mx-auto">Preț fix, 490 lei. Primești proforma pe email, iar după confirmarea plății, kitul complet — de regulă în aceeași zi lucrătoare.</p>
+                        <button onclick="openKitModal()" class="px-7 py-3.5 bg-white text-slate-900 font-semibold rounded-xl text-sm hover:bg-slate-100 transition shadow-md">Comandă kitul complet — 490 lei →</button>
+                    </div>
+                </div>
+            </section>
+
         </main>
+    </div>
+
+    <!-- Modal comandă kit -->
+    <div id="kit-modal-overlay" class="hidden fixed inset-0 bg-slate-900/70 z-50 items-center justify-center p-4" onclick="if(event.target===this) closeKitModal()">
+        <div class="bg-white rounded-2xl p-7 w-full max-w-md relative">
+            <button onclick="closeKitModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-lg">✕</button>
+            <div id="kit-form-wrap">
+                <p class="text-lg font-bold text-slate-900 mb-4">Comandă: KIT Legea 50/1991 — 490 lei</p>
+                <form id="kit-form" action="https://formspree.io/f/xnjyypve" method="POST" class="space-y-3">
+                    <input type="hidden" name="ghid_solicitat" value="KIT: Legea 50/1991 — autorizarea construcțiilor — 490 lei">
+                    <div><label class="block text-xs font-semibold text-slate-600 mb-1">Nume și prenume *</label><input type="text" name="nume" required class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></div>
+                    <div><label class="block text-xs font-semibold text-slate-600 mb-1">Companie *</label><input type="text" name="companie" required class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></div>
+                    <div><label class="block text-xs font-semibold text-slate-600 mb-1">Email *</label><input type="email" name="email" required class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></div>
+                    <div><label class="block text-xs font-semibold text-slate-600 mb-1">Telefon</label><input type="tel" name="telefon" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm"></div>
+                    <label class="flex items-start space-x-2 text-[11px] text-slate-600"><input type="checkbox" name="acord_gdpr" required class="mt-0.5"><span>Sunt de acord cu prelucrarea datelor conform <a href="/politica-de-confidentialitate.html" class="text-brand-700 underline">Politicii de confidențialitate</a>. *</span></label>
+                    <label class="flex items-start space-x-2 text-[11px] text-slate-600"><input type="checkbox" name="acord_livrare_digitala" required class="mt-0.5"><span>Solicit livrarea conținutului digital după confirmarea plății și înțeleg că îmi pierd dreptul de retragere, conform art. 16 lit. m din OUG 34/2014. *</span></label>
+                    <button type="submit" class="w-full py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl text-sm transition">Trimite comanda →</button>
+                </form>
+            </div>
+            <div id="kit-form-success" class="hidden text-center py-6">
+                <p class="text-lg font-bold text-slate-900">Comanda a fost trimisă!</p>
+                <p class="text-sm text-slate-500 mt-2">Primești factura proformă pe email în maximum o zi lucrătoare. După confirmarea plății, îți trimitem kitul complet și factura fiscală.</p>
+            </div>
+        </div>
     </div>
 
     <!-- Sub-footer cu disclaimer legal -->
@@ -993,6 +1117,39 @@
         }
 
         // --- Inițializare la încărcarea paginii ---
+        // --- Modal comandă kit ---
+        function openKitModal() {
+            const overlay = document.getElementById('kit-modal-overlay');
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+        }
+        function closeKitModal() {
+            const overlay = document.getElementById('kit-modal-overlay');
+            overlay.classList.add('hidden');
+            overlay.classList.remove('flex');
+        }
+        document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeKitModal(); });
+        document.getElementById('kit-form').addEventListener('submit', async function(e){
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.textContent = 'Se trimite...';
+            btn.disabled = true;
+            try {
+                const res = await fetch(this.action, { method: 'POST', body: new FormData(this), headers: { Accept: 'application/json' } });
+                if (res.ok) {
+                    document.getElementById('kit-form-wrap').classList.add('hidden');
+                    document.getElementById('kit-form-success').classList.remove('hidden');
+                } else {
+                    btn.textContent = 'Eroare — încearcă din nou';
+                    btn.disabled = false;
+                }
+            } catch {
+                btn.textContent = 'Eroare — încearcă din nou';
+                btn.disabled = false;
+            }
+        });
+
         window.onload = function() {
             // Setează stările implicite ale tab-urilor active
             switchTab('diagnostic');
