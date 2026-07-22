@@ -911,7 +911,10 @@
         const selectedSec = document.getElementById('sec-' + tabId);
         const selectedBtn = document.getElementById('tab-' + tabId);
         if (selectedSec) selectedSec.classList.remove('hidden');
-        if (selectedBtn) selectedBtn.classList.add('active');
+        if (selectedBtn) {
+            selectedBtn.classList.add('active');
+            selectedBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
 
         clearSearch();
     }
@@ -1097,6 +1100,9 @@
     window.onload = function() {
         calculateProjectDetails();
         updateDtacChecklist();
+        if (window.location.hash === '#kit') {
+            switchTab('kit');
+        }
     };
 </script>
 

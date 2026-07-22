@@ -448,7 +448,7 @@
         }).join('');
       const aiRequest = base.cat==='Asistenți AI' ? `<a class="btn btn-secondary request-link" data-request="Doresc o soluție personalizată" href="#contact">Vreau unul pentru organizația mea</a>` : '';
       const hasKitSample = isFree && kit;
-      const freeLinkText = base.free==='Test gratuit' ? 'Începe testul' : (isFree ? (hasKitSample ? 'Citește ghidul și vezi mostra kitului, gratuit' : (base.cat==='Asistenți AI'?'Încearcă asistentul':'Citește ghidul gratuit')) : 'Vezi prezentarea');
+      const freeLinkText = base.free==='Test gratuit' ? 'Începe testul' : (isFree ? (base.cat==='Asistenți AI'?'Încearcă asistentul':'Citește ghidul gratuit') : 'Vezi prezentarea');
       return `
         <article class="resource-card${isFree?' is-free':''}">
           <span class="status${isFree?' status-free':''}">${base.free}</span>
@@ -457,6 +457,7 @@
           <div class="resource-cta resource-cta-stack">
             ${buttons}${aiRequest}
             <a class="resource-free-link" href="${base.page}">${freeLinkText} →</a>
+            ${hasKitSample?`<a class="resource-free-link" href="${base.page}#kit">Vezi mostra kitului →</a>`:''}
           </div>
         </article>`;
     }
